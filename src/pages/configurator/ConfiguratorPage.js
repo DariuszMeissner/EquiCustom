@@ -1,21 +1,37 @@
 import React, { useEffect } from 'react'
+import { NavBar } from '../../components/NavBar'
+import OptionContainer from '../../components/OptionContainer';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { NavBar } from '../../components/layout/navigation/NavBar'
 import * as actions from '../../redux/actions'
 
-const ConfiguratorPage = (props) => {
+const ConfiguratorPage = ({ startLoadingColors, startLoadingEquipment, equipment, colors }) => {
 
     useEffect(() => {
-        props.startLoadingColors()
-        props.startLoadingEquipment()
-    }, [])
+        startLoadingColors()
+    }, [startLoadingColors])
+
+    useEffect(() => {
+        startLoadingEquipment()
+    }, [startLoadingEquipment])
+
+
+
 
     return (
-        <div>
-            {props.equipment.forEach(el=> console.log(el))}
-            <NavBar />
-        </div>
+        <BrowserRouter>
+            <>
+                <NavBar equipment={equipment} />
+                <Switch>
+                    <Route
+                        exact path='/configurator/:optionId'
+                        render={({match})=> <OptionContainer  match={match} equipment={equipment} colors={colors}/>}
+                    />
+                </Switch>
+            </>
+
+        </BrowserRouter>
     )
 }
 
@@ -23,7 +39,7 @@ const ConfiguratorPage = (props) => {
 
 
 //conect props and dispatch with store
-function mapStateToProps({colors,equipment}) {
+function mapStateToProps({ colors, equipment }) {
     return {
         colors,
         equipment
