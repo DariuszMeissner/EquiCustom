@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const view2 = () => {
+export const SelectionTitle = ({title}) => {
     return (
         <div>
-            view2
+            <h2>{title}</h2>
         </div>
     )
 }

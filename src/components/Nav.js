@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 
-export const NavBar = ({ equipment }) => {
+export const Nav = ({ equipment }) => {
     return (
         <nav>
             <ul>
