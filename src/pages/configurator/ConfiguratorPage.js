@@ -1,16 +1,13 @@
 import React, { useEffect } from 'react'
-import { NavBar } from '../../components/NavBar'
-import OptionContainer from '../../components/OptionContainer';
+import { Nav } from '../../components/Nav'
+import SelectionPanel from '../../components/SelectionPanel';
+import ProductPanel from '../../components/ProductPanel';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actions from '../../redux/actions'
 
-const ConfiguratorPage = ({ startLoadingColors, startLoadingEquipment, equipment, colors }) => {
-
-    useEffect(() => {
-        startLoadingColors()
-    }, [startLoadingColors])
+const ConfiguratorPage = ({ startLoadingEquipment, equipment, colorMaterial, colorBinding }) => {
 
     useEffect(() => {
         startLoadingEquipment()
@@ -22,11 +19,12 @@ const ConfiguratorPage = ({ startLoadingColors, startLoadingEquipment, equipment
     return (
         <BrowserRouter>
             <>
-                <NavBar equipment={equipment} />
+                <Nav equipment={equipment} />
+                <ProductPanel colorMaterial={colorMaterial} colorBinding={colorBinding}/>
                 <Switch>
                     <Route
                         exact path='/configurator/:optionId'
-                        render={({match})=> <OptionContainer  match={match} equipment={equipment} colors={colors}/>}
+                        render={({match})=> <SelectionPanel  colorBinding={colorBinding} colorMaterial={colorMaterial} match={match} equipment={equipment} />}
                     />
                 </Switch>
             </>
@@ -36,13 +34,12 @@ const ConfiguratorPage = ({ startLoadingColors, startLoadingEquipment, equipment
 }
 
 
-
-
 //conect props and dispatch with store
-function mapStateToProps({ colors, equipment }) {
+function mapStateToProps({ equipment, colorMaterial, colorBinding }) {
     return {
-        colors,
-        equipment
+        equipment,
+        colorMaterial,
+        colorBinding
     }
 }
 

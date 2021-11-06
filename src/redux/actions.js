@@ -1,22 +1,6 @@
 import { database } from '../api/firebaseConfig'
 
 
-export function startLoadingColors() {
-    return (dispatch) => {
-        return database
-        .ref('colors')
-        .once('value')
-        .then((snapshot) => {
-            let colors = []
-            snapshot.forEach( el =>  {
-                colors.push(el.val())
-            })
-            dispatch(loadColors(colors))
-        })
-        .catch(err => console.log(err))
-    }
-}
-
 export function startLoadingEquipment() {
     return (dispatch) => {
         return database
@@ -35,13 +19,20 @@ export function startLoadingEquipment() {
 
 
 
-
-export function loadColors(colors) {
+export function setColorMaterial(colorMaterial) {
     return {
-        type: 'LOAD_COLORS',
-        colors
+        type: 'SET_COLOR_MATERIAL',
+        colorMaterial
     }
 }
+
+export function setColorBinding(colorBinding) {
+    return {
+        type: 'SET_COLOR_BINDING',
+        colorBinding
+    }
+}
+
 
 export function loadEquipment(equipment) {
     return {

@@ -1,11 +1,5 @@
 import { combineReducers } from "redux"
 
-const colors = function (state = [], action) {
-    switch (action.type) {
-        case 'LOAD_COLORS': return action.colors
-        default: return state
-    }
-}
 
 const equipment = function (state = [], action) {
     switch (action.type) {
@@ -14,6 +8,23 @@ const equipment = function (state = [], action) {
     }
 }
 
-const rootReducers = combineReducers({ colors, equipment })
+
+const colorMaterial = function (state='', action) {
+    switch (action.type) {
+        case 'SET_COLOR_MATERIAL': return action.colorMaterial
+        default: return state
+    }
+}
+
+const colorBinding = function (state = '', action) {
+    switch (action.type) {
+        case 'SET_COLOR_BINDING': return action.colorBinding
+        default: return state
+    }
+}
+
+
+
+const rootReducers = combineReducers({ equipment, colorMaterial, colorBinding })
 
 export default rootReducers
