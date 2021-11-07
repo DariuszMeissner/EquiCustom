@@ -25,7 +25,7 @@ const SelectionOptions = ({ title, name, color, setColorMaterial,setColorBinding
         <>
             <SelectionTitle title={title} />
             <form>
-                {color.map(({ id, name, value }) =>
+                {color && color.map(({ id, name, value }) =>
                     <div key={id}>
                         <label >
                             <input
