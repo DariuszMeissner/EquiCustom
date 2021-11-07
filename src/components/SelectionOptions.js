@@ -4,22 +4,27 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../redux/actions'
 
-const SelectionOptions = ({ title, name, color, setColorMaterial,setColorBinding, colorMaterial, colorBinding}) => {
+const SelectionOptions = ({ title, name, color, setColorMaterial, setColorBinding, colorMaterial, colorBinding }) => {
     const [material, setMaterial] = useState(colorMaterial)
     const [binding, setBinding] = useState(colorBinding)
+    const [checked, setChecked] = useState('')
 
     useEffect(() => {
         name === 'material' && setColorMaterial(material)
         name === 'binding' && setColorBinding(binding)
-        
-    }, [material,binding, setColorMaterial, setColorBinding, name])
+
+    }, [material, binding, setColorMaterial, setColorBinding, name])
 
 
     const handleChange = e => {
-        name === 'material' && setMaterial(e.target.value)
-        name === 'binding' && setBinding(e.target.value)
+        const { value } = e.target
+
+        setChecked(value)
+
+        name === 'material' && setMaterial(value)
+        name === 'binding' && setBinding(value)
     }
-    
+
 
     return (
         <>
@@ -33,7 +38,7 @@ const SelectionOptions = ({ title, name, color, setColorMaterial,setColorBinding
                                 id={name}
                                 name={name}
                                 value={value}
-                                checked={false}
+                                checked={checked === value ? true : false}
                                 onChange={handleChange}
                             />
                             {name}
