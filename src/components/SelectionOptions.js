@@ -12,7 +12,7 @@ const SelectionOptions = ({ title, name, color, setColorMaterial,setColorBinding
         name === 'material' && setColorMaterial(material)
         name === 'binding' && setColorBinding(binding)
         
-    }, [material,binding, setColorMaterial, setColorBinding])
+    }, [material,binding, setColorMaterial, setColorBinding, name])
 
 
     const handleChange = e => {
@@ -25,7 +25,7 @@ const SelectionOptions = ({ title, name, color, setColorMaterial,setColorBinding
         <>
             <SelectionTitle title={title} />
             <form>
-                {color.map(({ id, name, value }) =>
+                {color && color.map(({ id, name, value }) =>
                     <div key={id}>
                         <label >
                             <input

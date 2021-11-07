@@ -11,7 +11,7 @@ const SelectionPanel = ({ match, equipment }) => {
         <section>
             {equipment.map(el => el.elements.map(({ id, title, color, name }) => {
                 if (+optionId === +id) {
-                    return color && <SelectionOptions color={color} name={name} key={id} title={title} />
+                    return <SelectionOptions color={color} name={name} key={id} title={title} />
                 }
             }))}
 
