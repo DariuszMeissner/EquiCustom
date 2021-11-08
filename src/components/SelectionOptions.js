@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import * as actions from '../redux/actions'
 import '../styles/selectionOptions.scss'
 
-const SelectionOptions = ({ title, name, color, setColorMaterial,setColorBinding, colorMaterial, colorBinding}) => {
+const SelectionOptions = ({ title, name, color, setColorMaterial, setColorBinding, colorMaterial, colorBinding }) => {
     const [material, setMaterial] = useState(colorMaterial)
     const [binding, setBinding] = useState(colorBinding)
     const [checked, setChecked] = useState('')
@@ -13,19 +13,19 @@ const SelectionOptions = ({ title, name, color, setColorMaterial,setColorBinding
     useEffect(() => {
         name === 'material' && setColorMaterial(material)
         name === 'binding' && setColorBinding(binding)
-        
-    }, [material,binding, setColorMaterial, setColorBinding, name])
+
+    }, [material, binding, setColorMaterial, setColorBinding, name])
 
 
     const handleChange = e => {
-        const {value} = e.target
+        const { value } = e.target
 
         setChecked(value)
 
         name === 'material' && setMaterial(value)
         name === 'binding' && setBinding(value)
     }
-    
+
 
     return (
         <section className="selectionOptions">
