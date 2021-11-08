@@ -1,13 +1,14 @@
 import React from 'react'
-import { ReactComponent as SvgMaterial } from '../images/material.svg'
-import { ReactComponent as SvgBinding } from '../images/binding.svg'
+import { OverviewPanel } from './OverviewPanel'
+import { Product } from './Product'
+import '../styles/productPanel.scss'
 
 const ProductPanel = ({ colorMaterial, colorBinding }) => {
     return (
-        <div style={{ position: 'relative' }}>
-            <SvgBinding style={{ position: 'absolute', bottom: 1, left: -1, fill: !colorBinding ? '#000' : colorBinding }} />
-            <SvgMaterial style={{ fill: !colorMaterial ? '#000' : colorMaterial }} />
-        </div>
+        <section className="productPanel">
+            <Product colorMaterial={colorMaterial} colorBinding={colorBinding}/>
+            <OverviewPanel />
+        </section>
     )
 }
 

@@ -3,10 +3,12 @@ import { SelectionTitle } from './SelectionTitle';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../redux/actions'
+import '../styles/selectionOptions.scss'
 
 const SelectionOptions = ({ title, name, color, setColorMaterial,setColorBinding, colorMaterial, colorBinding}) => {
     const [material, setMaterial] = useState(colorMaterial)
     const [binding, setBinding] = useState(colorBinding)
+    const [checked, setChecked] = useState('')
 
     useEffect(() => {
         name === 'material' && setColorMaterial(material)
@@ -16,24 +18,28 @@ const SelectionOptions = ({ title, name, color, setColorMaterial,setColorBinding
 
 
     const handleChange = e => {
-        name === 'material' && setMaterial(e.target.value)
-        name === 'binding' && setBinding(e.target.value)
+        const {value} = e.target
+
+        setChecked(value)
+
+        name === 'material' && setMaterial(value)
+        name === 'binding' && setBinding(value)
     }
     
 
     return (
-        <>
+        <section className="selectionOptions">
             <SelectionTitle title={title} />
-            <form>
+            <form className="selectionOptions__menu">
                 {color && color.map(({ id, name, value }) =>
-                    <div key={id}>
-                        <label >
+                    <div className="selectionOptions__item" key={id}>
+                        <label>
                             <input
                                 type='radio'
                                 id={name}
                                 name={name}
                                 value={value}
-                                checked={false}
+                                checked={checked === value ? true : false}
                                 onChange={handleChange}
                             />
                             {name}
@@ -41,7 +47,7 @@ const SelectionOptions = ({ title, name, color, setColorMaterial,setColorBinding
                     </div>
                 )}
             </form>
-        </>
+        </section>
     )
 }
 

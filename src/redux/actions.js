@@ -18,7 +18,6 @@ export function startLoadingEquipment() {
 }
 
 
-
 export function setColorMaterial(colorMaterial) {
     return {
         type: 'SET_COLOR_MATERIAL',
