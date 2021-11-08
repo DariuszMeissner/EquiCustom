@@ -3,6 +3,7 @@ import { SelectionTitle } from './SelectionTitle';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../redux/actions'
+import '../styles/selectionOptions.scss'
 
 const SelectionOptions = ({ title, name, color, setColorMaterial, setColorBinding, colorMaterial, colorBinding }) => {
     const [material, setMaterial] = useState(colorMaterial)
@@ -27,12 +28,12 @@ const SelectionOptions = ({ title, name, color, setColorMaterial, setColorBindin
 
 
     return (
-        <>
+        <section className="selectionOptions">
             <SelectionTitle title={title} />
-            <form>
+            <form className="selectionOptions__menu">
                 {color && color.map(({ id, name, value }) =>
-                    <div key={id}>
-                        <label >
+                    <div className="selectionOptions__item" key={id}>
+                        <label>
                             <input
                                 type='radio'
                                 id={name}
@@ -46,7 +47,7 @@ const SelectionOptions = ({ title, name, color, setColorMaterial, setColorBindin
                     </div>
                 )}
             </form>
-        </>
+        </section>
     )
 }
 
