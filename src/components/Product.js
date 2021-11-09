@@ -1,6 +1,6 @@
 import React from 'react'
-import { ReactComponent as SvgMaterial } from '../images/material.svg'
-import { ReactComponent as SvgBinding } from '../images/binding.svg'
+import { ReactComponent as SvgMaterial } from '../images/material_pad.svg'
+import { ReactComponent as SvgBinding } from '../images/binding_pad.svg'
 import '../styles/product.scss'
 
 export const Product = ({ colorMaterial, colorBinding }) => {
