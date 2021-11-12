@@ -9,9 +9,9 @@ const SelectionPanel = ({ match, equipment }) => {
     const { optionId } = match.params
     return (
         <section className="selectionPanel">
-            {equipment.map(el => el.elements.map(({ id, title, color, name }) => {
-                if (+optionId === +id) {
-                    return <SelectionOptions color={color} name={name} key={id} title={title} />
+            {equipment.map(el => el.elements.map(props => {
+                if (+optionId === +props.id) {
+                    return <SelectionOptions key={props.id} {...props} />
                 }
             }))}
 
