@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import SelectionPanel from '../../components/SelectionPanel';
-import ProductPanel from '../../components/ProductPanel';
+import ProductPanel from '../../components/product/ProductPanel';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -9,7 +9,7 @@ import '../../styles/configuratorPage.scss'
 import { NavContainer } from '../../components/NavContainer';
 
 
-const ConfiguratorPage = ({ startLoadingEquipment, equipment, colorMaterial, colorBinding }) => {
+const ConfiguratorPage = ({ startLoadingEquipment, equipment, colorMaterial, colorBinding, colorCord, colorTape, colorTopBinding, textEmbroidery, loadLogoOrText, choosedQuilt}) => {
 
     useEffect(() => {
         startLoadingEquipment()
@@ -22,7 +22,16 @@ const ConfiguratorPage = ({ startLoadingEquipment, equipment, colorMaterial, col
         <BrowserRouter>
             <div className="configurator">
                 <NavContainer equipment={equipment} />
-                <ProductPanel colorMaterial={colorMaterial} colorBinding={colorBinding} />
+                <ProductPanel
+                    colorMaterial={colorMaterial}
+                    colorBinding={colorBinding}
+                    colorCord={colorCord}
+                    colorTape={colorTape}
+                    colorTopBinding={colorTopBinding}
+                    textEmbroidery={textEmbroidery}
+                    loadLogoOrText={loadLogoOrText}
+                    choosedQuilt={choosedQuilt}
+                />
                 <Switch>
                     <Route
                         exact path='/configurator/:optionId'
@@ -37,11 +46,17 @@ const ConfiguratorPage = ({ startLoadingEquipment, equipment, colorMaterial, col
 
 
 //conect props and dispatch with store
-function mapStateToProps({ equipment, colorMaterial, colorBinding }) {
+function mapStateToProps({ equipment, colorMaterial, colorBinding, colorCord, colorTape, colorTopBinding, textEmbroidery, loadLogoOrText, choosedQuilt }) {
     return {
         equipment,
         colorMaterial,
-        colorBinding
+        colorBinding,
+        colorCord,
+        colorTape,
+        colorTopBinding,
+        textEmbroidery,
+        loadLogoOrText,
+        choosedQuilt
     }
 }
 
