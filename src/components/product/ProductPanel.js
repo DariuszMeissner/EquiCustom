@@ -3,7 +3,7 @@ import { OverviewPanel } from '../OverviewPanel'
 import { Product } from './Product'
 import '../../styles/productPanel.scss'
 
-const ProductPanel = ({ colorMaterial, colorBinding, colorCord, colorTape, colorTopBinding, textEmbroidery, loadLogoOrText, choosedQuilt }) => {
+const ProductPanel = ({ colorMaterial, colorBinding, colorCord, colorTape, colorTopBinding, textEmbroidery, loadLogoOrText, choosedQuilt,colorLogo, colorText }) => {
     return (
         <section className="productPanel">
             <Product
@@ -15,6 +15,8 @@ const ProductPanel = ({ colorMaterial, colorBinding, colorCord, colorTape, color
                 textEmbroidery={textEmbroidery}
                 loadLogoOrText={loadLogoOrText}
                 choosedQuilt={choosedQuilt}
+                colorLogo={colorLogo}
+                colorText={colorText}
             />
             <OverviewPanel />
         </section>

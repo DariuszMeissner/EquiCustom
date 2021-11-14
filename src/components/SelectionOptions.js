@@ -5,7 +5,14 @@ import { connect } from 'react-redux';
 import * as actions from '../redux/actions'
 import '../styles/selectionOptions.scss'
 import { SelectionOptionColor } from './SelectionOptions/SelectionOptionColor';
-import SelectionOptionEmbroidery  from './SelectionOptions/SelectionOptionEmbroidery';
+import SelectionOptionEmbroidery from './SelectionOptions/SelectionOptionEmbroidery';
+import SelectionOptionSize from './SelectionOptions/SelectionOptionSize';
+import SelectionOptionQuilt from './SelectionOptions/SelectionOptionQuilt';
+import SelectioOptionMaterial from './SelectionOptions/SelectioOptionMaterial';
+import SelectionOptionBinding from './SelectionOptions/SelectionOptionBinding';
+import SelectionOptionTopBinding from './SelectionOptions/SelectionOptionTopBinding';
+import SelectionOptionTape from './SelectionOptions/SelectionOptionTape';
+import SelectionOptionCord from './SelectionOptions/SelectionOptionCord';
 
 const SelectionOptions = ({ title, name, color, colorEmbroidery, size, quilting, logoOrText, setColorMaterial, setColorBinding, setColorCord, setColorTape, setColorTopBinding, colorMaterial, colorBinding, colorCord, colorTape, colorTopBinding, setQuilt, choosedQuilt }) => {
     const [material, setMaterial] = useState(colorMaterial)
@@ -27,28 +34,34 @@ const SelectionOptions = ({ title, name, color, colorEmbroidery, size, quilting,
     }, [material, binding, cord, tape, topBinding, setColorMaterial, setColorBinding, setColorCord, setColorTape, setColorTopBinding, name, setQuilt, localQuilt])
 
 
-    const handleChange = e => {
-        const { value } = e.target
-
-        setChecked(value)
-
-        name === 'material' && setMaterial(value)
-        name === 'binding' && setBinding(value)
-        name === 'cord' && setCord(value)
-        name === 'tape' && setTape(value)
-        name === 'top-binding' && setTopBinding(value)
-        name === 'quilting' && setLocalQuilt(value)
-    }
-
-
     return (
         <section className="selectionOptions">
             <SelectionTitle title={title} />
             <div className="selectionOptions__menu">
+                {/* Options of elements saddle pads */}
 
-                {color && color.map(props => <SelectionOptionColor key={props.id} nameItem={name} checked={checked} onChange={handleChange} {...props} />)}
-                {size && size.map(props => <SelectionOptionColor key={props.name} nameItem={name} checked={checked} onChange={handleChange} {...props} />)}
-                {quilting && quilting.map(props => <SelectionOptionColor key={props.name} nameItem={name} checked={checked} onChange={handleChange} {...props} />)}
+                {/* Size */}
+                {size && <SelectionOptionSize size={size} />}
+
+                {/* Quilt */}
+                {quilting && <SelectionOptionQuilt quilting={quilting} />}
+
+                {/* Material */}
+                {name === 'material' && <SelectioOptionMaterial color={color} />}
+
+                {/* Binding */}
+                {name === 'binding' && <SelectionOptionBinding color={color} />}
+
+                {/* TopBinding */}
+                {name === 'top-binding' && <SelectionOptionTopBinding color={color} />}
+
+                {/* Tape*/}
+                {name === 'tape' && <SelectionOptionTape color={color} />}
+
+                {/* Cord*/}
+                {name === 'cord' && <SelectionOptionCord color={color} />}
+
+                {/* Logo or Tex Embroidery */}
                 {logoOrText && <SelectionOptionEmbroidery logoOrText={logoOrText} colorEmbroidery={colorEmbroidery} />}
 
             </div>

@@ -17,6 +17,12 @@ export function startLoadingEquipment() {
     }
 }
 
+export function loadEquipment(equipment) {
+    return {
+        type: 'LOAD_EQUIPMENT',
+        equipment
+    }
+}
 
 export function setColorMaterial(colorMaterial) {
     return {
@@ -75,9 +81,23 @@ export function setQuilt(choosedQuilt) {
     }
 }
 
-export function loadEquipment(equipment) {
+export function setColorLogo(colorLogo) {
     return {
-        type: 'LOAD_EQUIPMENT',
-        equipment
+        type: 'SET_COLOR_LOGO',
+        colorLogo
+    }
+}
+
+export function setColorTextEmbroidery(colorText) {
+    return {
+        type: 'SET_COLOR_TEXT',
+        colorText
+    }
+}
+
+export function setPadSize(padSize) {
+    return {
+        type: 'SET_PAD_SIZE',
+        padSize
     }
 }

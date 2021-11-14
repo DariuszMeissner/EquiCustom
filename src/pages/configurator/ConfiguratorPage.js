@@ -9,7 +9,21 @@ import '../../styles/configuratorPage.scss'
 import { NavContainer } from '../../components/NavContainer';
 
 
-const ConfiguratorPage = ({ startLoadingEquipment, equipment, colorMaterial, colorBinding, colorCord, colorTape, colorTopBinding, textEmbroidery, loadLogoOrText, choosedQuilt}) => {
+const ConfiguratorPage = ({
+    startLoadingEquipment,
+    equipment,
+    colorMaterial,
+    colorBinding,
+    colorCord,
+    colorTape,
+    colorTopBinding,
+    textEmbroidery,
+    loadLogoOrText,
+    choosedQuilt,
+    colorText,
+    colorLogo
+
+}) => {
 
     useEffect(() => {
         startLoadingEquipment()
@@ -31,6 +45,8 @@ const ConfiguratorPage = ({ startLoadingEquipment, equipment, colorMaterial, col
                     textEmbroidery={textEmbroidery}
                     loadLogoOrText={loadLogoOrText}
                     choosedQuilt={choosedQuilt}
+                    colorText={colorText}
+                    colorLogo={colorLogo}
                 />
                 <Switch>
                     <Route
@@ -46,7 +62,7 @@ const ConfiguratorPage = ({ startLoadingEquipment, equipment, colorMaterial, col
 
 
 //conect props and dispatch with store
-function mapStateToProps({ equipment, colorMaterial, colorBinding, colorCord, colorTape, colorTopBinding, textEmbroidery, loadLogoOrText, choosedQuilt }) {
+function mapStateToProps({ equipment, colorMaterial, colorBinding, colorCord, colorTape, colorTopBinding, textEmbroidery, loadLogoOrText, choosedQuilt, colorLogo, colorText }) {
     return {
         equipment,
         colorMaterial,
@@ -56,7 +72,9 @@ function mapStateToProps({ equipment, colorMaterial, colorBinding, colorCord, co
         colorTopBinding,
         textEmbroidery,
         loadLogoOrText,
-        choosedQuilt
+        choosedQuilt,
+        colorLogo,
+        colorText
     }
 }
 
