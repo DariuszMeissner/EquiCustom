@@ -37,7 +37,7 @@ const colorTape = function (state = '#000', action) {
     }
 }
 
-const colorTopBinding = function (state = '#fff', action) {
+const colorTopBinding = function (state = '#000', action) {
     switch (action.type) {
         case 'SET_COLOR_TOPBINDING': return action.colorTopBinding
         default: return state
