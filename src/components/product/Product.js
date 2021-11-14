@@ -10,25 +10,37 @@ import { ReactComponent as SvgQuiltinghoneyComb } from '../../images/quilting_ho
 
 import '../../styles/product.scss'
 
-export const Product = ({ colorMaterial, colorBinding, colorCord, colorTape, colorTopBinding, textEmbroidery, loadLogoOrText, choosedQuilt }) => {
+export const Product = ({ colorMaterial, colorBinding, colorCord, colorTape, colorTopBinding, textEmbroidery, loadLogoOrText, choosedQuilt, colorLogo, colorText }) => {
     return (
         <div className="product">
+            {/* Layers of product */}
+            {/* Material */}
             <SvgMaterial className="product__item" style={{ fill: !colorMaterial ? '#000' : colorMaterial }} />
 
+            {/* Quilts  */}
             {choosedQuilt === 'romb' &&
                 <SvgQuiltingRomb className="product__item" style={{ fill: !colorTape ? '#000' : colorTape }} />
             }
             {choosedQuilt === 'honeycomb' &&
                 <SvgQuiltinghoneyComb className="product__item" style={{ fill: !colorTape ? '#000' : colorTape }} />
             }
+
+            {/* Cord */}
             <SvgCord className="product__item" style={{ fill: !colorCord ? '#000' : colorCord }} />
+
+            {/* Top binding */}
             <SvgTopBinding className="product__item" style={{ fill: !colorTopBinding ? '#000' : colorTopBinding }} />
+
+            {/* Binding */}
             <SvgBinding className="product__item" style={{ fill: !colorBinding ? '#000' : colorBinding }} />
+
+            {/* Tape */}
             <SvgTape className="product__item" style={{ fill: !colorTape ? '#000' : colorTape }} />
+
             {loadLogoOrText === 'logo' ?
-                <h2 >logo</h2>
+                <h2 style={{ color: colorLogo }}>logo</h2>
                 :
-                <h2 >{textEmbroidery}</h2>
+                <h2 style={{ color: colorText }}>{textEmbroidery}</h2>
             }
         </div>
     )

@@ -4,12 +4,14 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actions from '../../redux/actions'
 
-const SelectionOptionEmbroideryText = ({ colorEmbroidery, setTextEmbroidery }) => {
-    const [checked, setChecked] = useState(false)
-    const [text, setText] = useState('')
+const SelectionOptionEmbroideryText = ({ colorEmbroidery, setTextEmbroidery,textEmbroidery, setColorTextEmbroidery, colorText }) => {
+    const [checked, setChecked] = useState(colorText)
+    const [text, setText] = useState(textEmbroidery)
 
     const handleChange = e => {
-        setChecked(e.target.value)
+        const { value } = e.target
+        setChecked(value)
+        setColorTextEmbroidery(value)
     }
     const handleTextEmbroidery = e => {
         const { value } = e.target
@@ -25,16 +27,18 @@ const SelectionOptionEmbroideryText = ({ colorEmbroidery, setTextEmbroidery }) =
                 value={text}
                 onChange={handleTextEmbroidery}
             />
-            {/* {colorEmbroidery.map(({ name, value }) => <SelectionOptionColor key={name} name={name} value={value} onChange={handleChange} checked={checked} />)} */}
+            {colorEmbroidery.map(({ name, value }) => <SelectionOptionColor key={name} name={name} value={value} onChange={handleChange} checked={checked} />)}
         </div>
     )
 }
 
 
 //conect props and dispatch with store
-function mapStateToProps({ textEmbroidery }) {
+function mapStateToProps({ textEmbroidery, setColorTextEmbroidery, colorText }) {
     return {
-        textEmbroidery
+        textEmbroidery,
+        colorText,
+        
     }
 }
 
