@@ -16,7 +16,7 @@ export const Product = ({ colorMaterial, colorBinding, colorCord, colorTape, col
         <div className="product">
             {/* Layers of product */}
 
-            <img style={{width:'150%'}}src={horseView} alt='horse view' />
+            <img style={{width:'100%'}}src={horseView} alt='horse view' />
             {/* Material */}
             <SvgMaterial className="product__item" style={{ fill: !colorMaterial ? '#000' : colorMaterial }} />
 
