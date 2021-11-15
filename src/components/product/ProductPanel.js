@@ -1,9 +1,12 @@
-import React from 'react'
-import { OverviewPanel } from '../OverviewPanel'
+import React, { useState } from 'react'
+import { Button } from '../button/button'
+import { OverviewPanel } from '../overview/OverviewPanel'
 import { Product } from './Product'
-import '../../styles/productPanel.scss'
+import './productPanel.scss'
 
-const ProductPanel = ({ colorMaterial, colorBinding, colorCord, colorTape, colorTopBinding, textEmbroidery, loadLogoOrText, choosedQuilt,colorLogo, colorText }) => {
+const ProductPanel = ({ colorMaterial, colorBinding, colorCord, colorTape, colorTopBinding, textEmbroidery, loadLogoOrText, choosedQuilt, colorLogo, colorText, handleClick, isShow }) => {
+    
+
     return (
         <section className="productPanel">
             <Product
@@ -17,8 +20,16 @@ const ProductPanel = ({ colorMaterial, colorBinding, colorCord, colorTape, color
                 choosedQuilt={choosedQuilt}
                 colorLogo={colorLogo}
                 colorText={colorText}
+                isShow={isShow}
             />
-            <OverviewPanel />
+            {!isShow && <OverviewPanel handleClick={handleClick} />}
+            {isShow &&
+                <div>
+                    <Button 
+                    title='Close full preview'
+                    position='absolute' 
+                    handleClick={handleClick} />
+                </div>}
         </section>
     )
 }

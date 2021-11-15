@@ -3,7 +3,7 @@ import SelectionOptionEmbroideryLogo from './SelectionOptionEmbroideryLogo'
 import SelectionOptionEmbroideryText from './SelectionOptionEmbroideryText'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as actions from '../../redux/actions'
+import * as actions from '../../../redux/actions'
 
 const SelectionOptionEmbroidery = ({ logoOrText, colorEmbroidery, setLogoOrText, loadLogoOrText }) => {
     const [checked, setChecked] = useState(loadLogoOrText)

@@ -2,15 +2,15 @@ import React, { useState } from 'react'
 import { SelectionOptionColor } from './SelectionOptionColor'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as actions from '../../redux/actions'
+import * as actions from '../../../redux/actions'
 
-const SelectionOptionCord = ({ color, setColorCord, colorCord }) => {
-    const [checked, setChecked] = useState(colorCord)
+const SelectionOptionMaterial = ({ color, setColorMaterial, colorMaterial }) => {
+    const [checked, setChecked] = useState(colorMaterial)
 
     const handleChange = e => {
         const { value } = e.target
         setChecked(value)
-        setColorCord(value)
+        setColorMaterial(value)
     }
 
     return (
@@ -23,10 +23,10 @@ const SelectionOptionCord = ({ color, setColorCord, colorCord }) => {
 
 
 //conect props and dispatch with store
-function mapStateToProps({ setColorCord, colorCord }) {
+function mapStateToProps({setColorMaterial, colorMaterial }) {
     return {
-        setColorCord,
-        colorCord
+        setColorMaterial, 
+        colorMaterial
     }
 }
 
@@ -34,4 +34,4 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators(actions, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SelectionOptionCord)
+export default connect(mapStateToProps, mapDispatchToProps)(SelectionOptionMaterial)
