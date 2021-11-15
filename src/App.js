@@ -1,5 +1,5 @@
 import React from 'react'
-import ConfiguratorPage  from './pages/configurator/ConfiguratorPage'
+import ConfiguratorPage  from './pages/configurator/configuratorPage'
 import './styles/reset.scss'
 
 export const App = () => {

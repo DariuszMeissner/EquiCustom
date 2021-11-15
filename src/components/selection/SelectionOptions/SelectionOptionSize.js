@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { SelectionOptionColor } from './SelectionOptionColor'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as actions from '../../redux/actions'
+import * as actions from '../../../redux/actions'
 
 const SelectionOptionSize = ({size, setPadSize, padSize}) => {
     const [checked, setChecked] = useState(padSize)

@@ -1,6 +1,6 @@
 import React from 'react'
-import SelectionOptions from './SelectionOptions'
-import '../styles/selectionPanel.scss'
+import SelectionOptions from '../SelectionOptions/SelectionOptions'
+import './selectionPanel.scss'
 
 
 const SelectionPanel = ({ match, equipment }) => {

@@ -2,17 +2,16 @@ import React, { useState, useEffect } from 'react'
 import { SelectionTitle } from './SelectionTitle';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../redux/actions'
-import '../styles/selectionOptions.scss'
-import { SelectionOptionColor } from './SelectionOptions/SelectionOptionColor';
-import SelectionOptionEmbroidery from './SelectionOptions/SelectionOptionEmbroidery';
-import SelectionOptionSize from './SelectionOptions/SelectionOptionSize';
-import SelectionOptionQuilt from './SelectionOptions/SelectionOptionQuilt';
-import SelectioOptionMaterial from './SelectionOptions/SelectioOptionMaterial';
-import SelectionOptionBinding from './SelectionOptions/SelectionOptionBinding';
-import SelectionOptionTopBinding from './SelectionOptions/SelectionOptionTopBinding';
-import SelectionOptionTape from './SelectionOptions/SelectionOptionTape';
-import SelectionOptionCord from './SelectionOptions/SelectionOptionCord';
+import * as actions from '../../../redux/actions'
+import SelectionOptionEmbroidery from './SelectionOptionEmbroidery';
+import SelectionOptionSize from './SelectionOptionSize';
+import SelectionOptionQuilt from './SelectionOptionQuilt';
+import SelectioOptionMaterial from './SelectioOptionMaterial';
+import SelectionOptionBinding from './SelectionOptionBinding';
+import SelectionOptionTopBinding from './SelectionOptionTopBinding';
+import SelectionOptionTape from './SelectionOptionTape';
+import SelectionOptionCord from './SelectionOptionCord';
+import './selectionOptions.scss'
 
 const SelectionOptions = ({ title, name, color, colorEmbroidery, size, quilting, logoOrText, setColorMaterial, setColorBinding, setColorCord, setColorTape, setColorTopBinding, colorMaterial, colorBinding, colorCord, colorTape, colorTopBinding, setQuilt, choosedQuilt }) => {
     const [material, setMaterial] = useState(colorMaterial)

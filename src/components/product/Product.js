@@ -7,14 +7,16 @@ import { ReactComponent as SvgTape } from '../../images/tape_pad.svg'
 import { ReactComponent as SvgQuiltingRomb } from '../../images/quilting_romb_pad.svg'
 import { ReactComponent as SvgQuiltinghoneyComb } from '../../images/quilting_honeyComb_pad.svg'
 import { ReactComponent as SvgLogo } from '../../images/logo_pad.svg'
+import horseView from '../../images/horse_view.png'
+import './product.scss'
 
-
-import '../../styles/product.scss'
 
 export const Product = ({ colorMaterial, colorBinding, colorCord, colorTape, colorTopBinding, textEmbroidery, loadLogoOrText, choosedQuilt, colorLogo, colorText }) => {
     return (
         <div className="product">
             {/* Layers of product */}
+
+            <img style={{width:'150%'}}src={horseView} alt='horse view' />
             {/* Material */}
             <SvgMaterial className="product__item" style={{ fill: !colorMaterial ? '#000' : colorMaterial }} />
 

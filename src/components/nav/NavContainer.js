@@ -1,7 +1,7 @@
 import React from 'react'
-import '../styles/nav.scss'
 import { Nav } from './Nav'
 import { NavLogo } from './NavLogo'
+import './nav.scss'
 
 
 
