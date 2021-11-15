@@ -10,6 +10,7 @@ import { ReactComponent as SvgLogo } from '../../images/logo_pad.svg'
 import horseView from '../../images/horse_view.png'
 import './product.scss'
 
+
 export const Product = ({ colorMaterial, colorBinding, colorCord, colorTape, colorTopBinding, textEmbroidery, loadLogoOrText, choosedQuilt, colorLogo, colorText }) => {
     return (
         <div className="product">
@@ -46,7 +47,6 @@ export const Product = ({ colorMaterial, colorBinding, colorCord, colorTape, col
 
             {/* Tape */}
             <SvgTape className="product__item" style={{ fill: !colorTape ? '#000' : colorTape }} />
-
 
         </div>
     )
