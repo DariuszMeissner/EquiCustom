@@ -51,6 +51,7 @@ const ConfiguratorPage = ({
                     colorLogo={colorLogo}
                     handleClick={handleClickFullPreview}
                     isShow={isShow}
+                    equipment={equipment}
                 />
                 <Switch>
                     <Route

@@ -1,14 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Button } from '../button/button'
 import { OverviewPanel } from '../overview/OverviewPanel'
 import { Product } from './Product'
 import './productPanel.scss'
 
-const ProductPanel = ({ colorMaterial, colorBinding, colorCord, colorTape, colorTopBinding, textEmbroidery, loadLogoOrText, choosedQuilt, colorLogo, colorText, handleClick, isShow }) => {
+const ProductPanel = ({ equipment, colorMaterial, colorBinding, colorCord, colorTape, colorTopBinding, textEmbroidery, loadLogoOrText, choosedQuilt, colorLogo, colorText, handleClick, isShow }) => {
     
+    let isPreview = {
+        height: isShow && '100vh'
+    }
 
     return (
-        <section className="productPanel">
+        <section className="productPanel" style={ isPreview }>
             <Product
                 colorMaterial={colorMaterial}
                 colorBinding={colorBinding}
@@ -22,7 +25,7 @@ const ProductPanel = ({ colorMaterial, colorBinding, colorCord, colorTape, color
                 colorText={colorText}
                 isShow={isShow}
             />
-            {!isShow && <OverviewPanel handleClick={handleClick} />}
+            {!isShow && <OverviewPanel handleClick={handleClick} equipment={equipment} />}
             {isShow &&
                 <div>
                     <Button 
