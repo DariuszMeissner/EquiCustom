@@ -1,7 +1,5 @@
 import React from 'react'
 import { Button } from '../button/button'
-import './overviewPanel.scss'
-
 
 export const OverviewPanel = ({ handleClick, equipment }) => {
 

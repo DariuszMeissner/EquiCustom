@@ -11,7 +11,6 @@ import SelectionOptionBinding from './SelectionOptionBinding';
 import SelectionOptionTopBinding from './SelectionOptionTopBinding';
 import SelectionOptionTape from './SelectionOptionTape';
 import SelectionOptionCord from './SelectionOptionCord';
-import './selectionOptions.scss'
 
 const SelectionOptions = ({ title, name, color, colorEmbroidery, size, quilting, logoOrText, setColorMaterial, setColorBinding, setColorCord, setColorTape, setColorTopBinding, colorMaterial, colorBinding, colorCord, colorTape, colorTopBinding, setQuilt, choosedQuilt }) => {
     const [material, setMaterial] = useState(colorMaterial)

@@ -6,7 +6,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actions from '../../redux/actions'
-import './configuratorPage.scss'
 
 const ConfiguratorPage = ({
     startLoadingEquipment,
@@ -36,7 +35,7 @@ const ConfiguratorPage = ({
 
     return (
         <BrowserRouter>
-            <div className="configurator">
+            <section className="configurator">
                 {!isShow && <NavContainer equipment={equipment} />}
                 <ProductPanel
                     colorMaterial={colorMaterial}
@@ -59,7 +58,7 @@ const ConfiguratorPage = ({
                         render={({ match }) => !isShow && <SelectionPanel colorBinding={colorBinding} colorMaterial={colorMaterial} match={match} equipment={equipment} />}
                     />
                 </Switch>
-            </div>
+            </section>
 
         </BrowserRouter>
     )

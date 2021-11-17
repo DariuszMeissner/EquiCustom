@@ -1,6 +1,8 @@
 import React from 'react'
 import ConfiguratorPage from './pages/configurator/ConfiguratorPage'
-import './styles/_reset.scss'
+import "bootstrap/dist/css/bootstrap.min.css";
+import './styles/_main.scss'
+
 
 export const App = () => {
 

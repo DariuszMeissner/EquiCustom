@@ -1,0 +1,21 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  &__item {
+    display: none;
+    @include tablet {
+      display: inline;
+    }
+  }
+  &__circle {
+    width: 10px;
+    height: 10px;
+    @include tablet {
+      display: none;
+    }
+  }
+}
+
+.active {
+  color: black;
+}
