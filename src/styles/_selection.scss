@@ -6,6 +6,8 @@
 
 .selectionPanel {
   background-color: green;
+  @include tablet {
+  }
 }
 .selectionOptions {
   &__item {

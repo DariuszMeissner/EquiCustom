@@ -36,7 +36,7 @@ const ConfiguratorPage = ({
         <BrowserRouter>
             <section className="configurator">
                 {!isShow && <NavContainer equipment={equipment} />}
-                <div className="d-flex flex-column-reverse flex-md-column">
+                <div className="configurator__container d-flex flex-column-reverse flex-md-column">
                     <div className="col-12" >
                         <ProductPanel
                             colorMaterial={colorMaterial}

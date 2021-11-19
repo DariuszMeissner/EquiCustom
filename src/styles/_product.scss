@@ -1,5 +1,5 @@
 .productPanel {
-  height: 80vh;
+  height: 60vh;
   overflow: hidden;
 }
 
@@ -76,13 +76,45 @@
 
 // full view styles
 .fullView {
-  &__horse {
-  
+  &__product {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
-  &__layers {
-   
+  &__element {
+    position: fixed;
+    width: 25%;
+    top: 0;
+    left: 43%;
+    margin-top: 23%;
+    @include tablet {
+      width: 220px;
+      top: 50%;
+      left: 50%;
+      margin-top: -316px;
+      margin-left: -60px;
+    }
+  }
+  &__horse {
+    width: 100%;
+    max-width: 800px;
+
+    @include tablet {
+    }
   }
   &__text {
-   
+    position: fixed;
+    top: 0;
+    right: 35%;
+    margin-top: 35%;
+    font-size: 3vw;
+    text-transform: uppercase;
+    @include tablet {
+      font-size: 1.5rem;
+      top: 0;
+      right: 50%;
+      margin-top: 295px;
+      margin-right: -130px;
+    }
   }
 }

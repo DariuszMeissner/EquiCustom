@@ -1,13 +1,14 @@
 .nav {
+  height: 5vh;
   display: flex;
   justify-content: space-between;
-  padding: 0 1rem;
+  align-items: center;
+  text-transform: capitalize;
   @include laptop {
     padding: 0 4rem;
   }
   &__box {
-    padding: 1rem;
-    background-color: red;
+    padding: 0.3rem;
   }
   &__item {
     display: none;
@@ -15,10 +16,16 @@
       display: inline;
     }
   }
+  &__link {
+    color: $black-light;
+    &:hover {
+      color: $red;
+    }
+  }
   // Size of circle
   &__circle {
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    height: 15px;
     @include tablet {
       display: none;
     }
@@ -27,5 +34,30 @@
 
 //active link Router NavLink
 .active {
-  color: black;
+  color: $red;
+  font-weight: 600;
+  padding: 4px;
+  border-radius: 50%;
+  background-color: $red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+  @include tablet {
+    border-radius: 0;
+    background-color: transparent;
+    font-size: 1.2rem;
+    transition: 0.2;
+  }
+}
+
+// logo
+.logo {
+  height: 5vh;
+  font-family: "Pacifico";
+  font-size: 1.2rem;
+  color: $red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
