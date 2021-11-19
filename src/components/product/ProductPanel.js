@@ -1,34 +1,44 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Button } from '../button/button'
 import { OverviewPanel } from '../overview/OverviewPanel'
 import { Product } from './Product'
-import './productPanel.scss'
 
-const ProductPanel = ({ colorMaterial, colorBinding, colorCord, colorTape, colorTopBinding, textEmbroidery, loadLogoOrText, choosedQuilt, colorLogo, colorText, handleClick, isShow }) => {
-    
+const ProductPanel = ({ equipment, colorMaterial, colorBinding, colorCord, colorTape, colorTopBinding, textEmbroidery, loadLogoOrText, choosedQuilt, colorLogo, colorText, handleClick, isShow }) => {
+
+    let isPreview = {
+        height: isShow && '100vh'
+    }
 
     return (
-        <section className="productPanel">
-            <Product
-                colorMaterial={colorMaterial}
-                colorBinding={colorBinding}
-                colorCord={colorCord}
-                colorTape={colorTape}
-                colorTopBinding={colorTopBinding}
-                textEmbroidery={textEmbroidery}
-                loadLogoOrText={loadLogoOrText}
-                choosedQuilt={choosedQuilt}
-                colorLogo={colorLogo}
-                colorText={colorText}
-                isShow={isShow}
-            />
-            {!isShow && <OverviewPanel handleClick={handleClick} />}
+        <section className="productPanel" style={isPreview}>
+            <div className="row">
+                <div className="col-12 col-md-8">
+                    <Product
+                        colorMaterial={colorMaterial}
+                        colorBinding={colorBinding}
+                        colorCord={colorCord}
+                        colorTape={colorTape}
+                        colorTopBinding={colorTopBinding}
+                        textEmbroidery={textEmbroidery}
+                        loadLogoOrText={loadLogoOrText}
+                        choosedQuilt={choosedQuilt}
+                        colorLogo={colorLogo}
+                        colorText={colorText}
+                        isShow={isShow}
+                    />
+                </div>
+                <div className="col-12 col-md-4">
+                    {!isShow && <OverviewPanel handleClick={handleClick} equipment={equipment} />}
+
+                </div>
+            </div>
+
             {isShow &&
                 <div>
-                    <Button 
-                    title='Close full preview'
-                    position='absolute' 
-                    handleClick={handleClick} />
+                    <Button
+                        title='Close full preview'
+                        position='absolute'
+                        handleClick={handleClick} />
                 </div>}
         </section>
     )

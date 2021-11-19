@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actions from '../../../redux/actions'
 
-const SelectionOptionEmbroideryText = ({ colorEmbroidery, setTextEmbroidery,textEmbroidery, setColorTextEmbroidery, colorText }) => {
+const SelectionOptionEmbroideryText = ({ colorEmbroidery, setTextEmbroidery, textEmbroidery, setColorTextEmbroidery, colorText }) => {
     const [checked, setChecked] = useState(colorText)
     const [text, setText] = useState(textEmbroidery)
 
@@ -14,31 +14,38 @@ const SelectionOptionEmbroideryText = ({ colorEmbroidery, setTextEmbroidery,text
         setColorTextEmbroidery(value)
     }
     const handleTextEmbroidery = e => {
-        const { value } = e.target
-        setText(value)
-        setTextEmbroidery(value)
+        const { value, maxLength } = e.target
+        const text = value.slice(0,maxLength)
+
+        setText(text)
+        setTextEmbroidery(text)
     }
 
     return (
-        <div>
-            <input
-                type='text'
-                name='text'
-                value={text}
-                onChange={handleTextEmbroidery}
-            />
-            {colorEmbroidery.map(({ name, value }) => <SelectionOptionColor key={name} name={name} value={value} onChange={handleChange} checked={checked} />)}
+        <div className="selectionOptions__text ">
+            <div className="selectionOptions__item ">
+                <input
+                    type='text'
+                    name='text'
+                    value={text}
+                    maxLength='3'
+                    onChange={handleTextEmbroidery}
+                />
+            </div>
+            <div className="d-flex"> 
+                {colorEmbroidery.map(({ name, value }) => <SelectionOptionColor key={name} name={name} value={value} onChange={handleChange} checked={checked} />)}
+            </div>
         </div>
     )
 }
 
 
 //conect props and dispatch with store
-function mapStateToProps({ textEmbroidery, setColorTextEmbroidery, colorText }) {
+function mapStateToProps({ textEmbroidery, colorText }) {
     return {
         textEmbroidery,
         colorText,
-        
+
     }
 }
 

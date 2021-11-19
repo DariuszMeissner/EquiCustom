@@ -14,7 +14,7 @@ const SelectionOptionSize = ({size, setPadSize, padSize}) => {
     }
 
     return (
-        <div>
+        <div className="selectionOptions__item">
             {size.map(props => <SelectionOptionColor key={props.name}  checked={checked} onChange={handleChange} {...props} />)}
         </div>
     )

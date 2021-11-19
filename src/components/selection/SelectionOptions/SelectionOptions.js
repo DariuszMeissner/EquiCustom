@@ -11,7 +11,6 @@ import SelectionOptionBinding from './SelectionOptionBinding';
 import SelectionOptionTopBinding from './SelectionOptionTopBinding';
 import SelectionOptionTape from './SelectionOptionTape';
 import SelectionOptionCord from './SelectionOptionCord';
-import './selectionOptions.scss'
 
 const SelectionOptions = ({ title, name, color, colorEmbroidery, size, quilting, logoOrText, setColorMaterial, setColorBinding, setColorCord, setColorTape, setColorTopBinding, colorMaterial, colorBinding, colorCord, colorTape, colorTopBinding, setQuilt, choosedQuilt }) => {
     const [material, setMaterial] = useState(colorMaterial)
@@ -34,7 +33,7 @@ const SelectionOptions = ({ title, name, color, colorEmbroidery, size, quilting,
 
 
     return (
-        <section className="selectionOptions">
+        <section className="selectionOptions d-flex flex-column align-content-center">
             <SelectionTitle title={title} />
             <div className="selectionOptions__menu">
                 {/* Options of elements saddle pads */}

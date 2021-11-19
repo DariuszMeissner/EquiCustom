@@ -14,7 +14,7 @@ const SelectionOptionCord = ({ color, setColorCord, colorCord }) => {
     }
 
     return (
-        <div>
+        <div className="selectionOptions__item">
             {color.map(props => <SelectionOptionColor key={props.name} checked={checked} onChange={handleChange} {...props} />)}
         </div>
     )

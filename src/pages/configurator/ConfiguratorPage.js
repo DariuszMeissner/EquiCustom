@@ -6,7 +6,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actions from '../../redux/actions'
-import './configuratorPage.scss'
 
 const ConfiguratorPage = ({
     startLoadingEquipment,
@@ -27,7 +26,6 @@ const ConfiguratorPage = ({
     const [isShow, setIsShow] = useState(false)
     const handleClickFullPreview = () => {
         setIsShow(prev => !prev)
-        console.log(isShow)
     }
 
     useEffect(() => {
@@ -36,29 +34,37 @@ const ConfiguratorPage = ({
 
     return (
         <BrowserRouter>
-            <div className="configurator">
+            <section className="configurator">
                 {!isShow && <NavContainer equipment={equipment} />}
-                <ProductPanel
-                    colorMaterial={colorMaterial}
-                    colorBinding={colorBinding}
-                    colorCord={colorCord}
-                    colorTape={colorTape}
-                    colorTopBinding={colorTopBinding}
-                    textEmbroidery={textEmbroidery}
-                    loadLogoOrText={loadLogoOrText}
-                    choosedQuilt={choosedQuilt}
-                    colorText={colorText}
-                    colorLogo={colorLogo}
-                    handleClick={handleClickFullPreview}
-                    isShow={isShow}
-                />
-                <Switch>
-                    <Route
-                        exact path='/configurator/:optionId'
-                        render={({ match }) => !isShow && <SelectionPanel colorBinding={colorBinding} colorMaterial={colorMaterial} match={match} equipment={equipment} />}
-                    />
-                </Switch>
-            </div>
+                <div className="d-flex flex-column-reverse flex-md-column">
+                    <div className="col-12" >
+                        <ProductPanel
+                            colorMaterial={colorMaterial}
+                            colorBinding={colorBinding}
+                            colorCord={colorCord}
+                            colorTape={colorTape}
+                            colorTopBinding={colorTopBinding}
+                            textEmbroidery={textEmbroidery}
+                            loadLogoOrText={loadLogoOrText}
+                            choosedQuilt={choosedQuilt}
+                            colorText={colorText}
+                            colorLogo={colorLogo}
+                            handleClick={handleClickFullPreview}
+                            isShow={isShow}
+                            equipment={equipment}
+                        />
+                    </div>
+                    <div className="col-12" >
+                        <Switch>
+                            <Route
+                                exact path='/configurator/:optionId'
+                                render={({ match }) => !isShow && <SelectionPanel colorBinding={colorBinding} colorMaterial={colorMaterial} match={match} equipment={equipment} />}
+                            />
+                        </Switch>
+                    </div>
+
+                </div>
+            </section>
 
         </BrowserRouter>
     )

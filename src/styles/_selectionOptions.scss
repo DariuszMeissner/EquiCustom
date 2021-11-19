@@ -1,0 +1,16 @@
+.selection__title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.selectionPanel {
+  background-color: green;
+}
+.selectionOptions {
+  &__item {
+    display: flex;
+  }
+}
+
+// Radio button styling

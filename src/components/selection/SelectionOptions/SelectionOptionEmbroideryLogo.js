@@ -14,7 +14,7 @@ export const SelectionOptionEmbroideryLogo = ({colorEmbroidery, setColorLogo, co
     }
 
     return (
-        <div>
+        <div className="selectionOptions__item">
             {colorEmbroidery.map(({name,value}) => <SelectionOptionColor key={name} name={name} value={value} onChange={handleChange} checked={checked}/>)}
         </div>
     )

@@ -14,7 +14,7 @@ const SelectionOptionQuilt = ({ quilting, setQuilt, choosedQuilt}) => {
     }
 
     return (
-        <div>
+        <div className="selectionOptions__item">
             {quilting.map(props => <SelectionOptionColor key={props.name} checked={checked} onChange={handleChange} {...props} />)}
         </div>
     )

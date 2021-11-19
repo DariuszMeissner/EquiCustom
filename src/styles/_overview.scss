@@ -1,0 +1,9 @@
+.overviewPanel {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    @include tablet {
+        position: unset;
+    }
+}

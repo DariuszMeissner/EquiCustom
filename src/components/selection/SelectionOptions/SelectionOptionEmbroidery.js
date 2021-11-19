@@ -15,28 +15,32 @@ const SelectionOptionEmbroidery = ({ logoOrText, colorEmbroidery, setLogoOrText,
     }
 
     return (
-        <div>
-            {logoOrText.map(({ name, value }) => {
-                return (
-                    <div className="selectionOptions__item" key={name}>
-                        <label>
-                            <input
-                                type='radio'
-                                id={name}
-                                name={name}
-                                value={value}
-                                checked={checked === value ? true : false}
-                                onChange={handleChange}
-                            />
-                            {name}
-                        </label>
+        <div className="selectionOptions__embroidery">
+            <div className="col-12 d-flex">
+                {logoOrText.map(({ name, value }) => {
+                    return (
+                        <div className="selectionOptions" key={name}>
+                            <label>
+                                <input
+                                    type='radio'
+                                    id={name}
+                                    name={name}
+                                    value={value}
+                                    checked={checked === value ? true : false}
+                                    onChange={handleChange}
+                                />
+                                {name}
+                            </label>
 
-                    </div>
-                )
-            }
-            )}
-            {checked === 'logo' && <SelectionOptionEmbroideryLogo colorEmbroidery={colorEmbroidery} />}
-            {checked === 'text' && <SelectionOptionEmbroideryText colorEmbroidery={colorEmbroidery} />}
+                        </div>
+                    )
+                }
+                )}
+            </div>
+            <div className="col-12">
+                {checked === 'logo' && <SelectionOptionEmbroideryLogo colorEmbroidery={colorEmbroidery} />}
+                {checked === 'text' && <SelectionOptionEmbroideryText colorEmbroidery={colorEmbroidery} />}
+            </div>
         </div>
     )
 }
