@@ -4,6 +4,7 @@ import SelectionOptionEmbroideryText from './SelectionOptionEmbroideryText'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actions from '../../../redux/actions'
+import { ButtonNextStep } from '../../button/ButtonNextStep'
 
 const SelectionOptionEmbroidery = ({ logoOrText, colorEmbroidery, setLogoOrText, loadLogoOrText }) => {
     const [checked, setChecked] = useState(loadLogoOrText)
@@ -41,6 +42,8 @@ const SelectionOptionEmbroidery = ({ logoOrText, colorEmbroidery, setLogoOrText,
                 {checked === 'logo' && <SelectionOptionEmbroideryLogo colorEmbroidery={colorEmbroidery} />}
                 {checked === 'text' && <SelectionOptionEmbroideryText colorEmbroidery={colorEmbroidery} />}
             </div>
+            <ButtonNextStep title='back' id='7' />
+            <ButtonNextStep title='' id='7' />
         </div>
     )
 }

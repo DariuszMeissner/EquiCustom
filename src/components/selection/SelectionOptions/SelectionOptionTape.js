@@ -3,6 +3,7 @@ import { SelectionOptionColor } from './SelectionOptionColor'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actions from '../../../redux/actions'
+import { ButtonNextStep } from '../../button/ButtonNextStep'
 
 const SelectionOptionTape = ({ color, setColorTape, colorTape }) => {
     const [checked, setChecked] = useState(colorTape)
@@ -16,6 +17,8 @@ const SelectionOptionTape = ({ color, setColorTape, colorTape }) => {
     return (
         <div className="selectionOptions__item">
             {color.map(props => <SelectionOptionColor key={props.name} checked={checked} onChange={handleChange} {...props} />)}
+            <ButtonNextStep title='back' id='5' />
+            <ButtonNextStep title='next' id='7' />
         </div>
     )
 }
