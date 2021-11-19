@@ -14,7 +14,7 @@ const SelectionOptionTopBinding = ({ color, setColorTopBinding, colorTopBinding 
     }
 
     return (
-        <div>
+        <div className="selectionOptions__item">
             {color.map(props => <SelectionOptionColor key={props.name} checked={checked} onChange={handleChange} {...props} />)}
         </div>
     )

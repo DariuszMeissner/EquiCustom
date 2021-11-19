@@ -10,9 +10,9 @@ const ProductPanel = ({ equipment, colorMaterial, colorBinding, colorCord, color
     }
 
     return (
-        <section className="" style={isPreview}>
-            <div className="">
-                <div className="">
+        <section className="productPanel" style={isPreview}>
+            <div className="row">
+                <div className="col-12 col-md-8">
                     <Product
                         colorMaterial={colorMaterial}
                         colorBinding={colorBinding}
@@ -27,7 +27,7 @@ const ProductPanel = ({ equipment, colorMaterial, colorBinding, colorCord, color
                         isShow={isShow}
                     />
                 </div>
-                <div className="">
+                <div className="col-12 col-md-4">
                     {!isShow && <OverviewPanel handleClick={handleClick} equipment={equipment} />}
 
                 </div>

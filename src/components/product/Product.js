@@ -12,9 +12,9 @@ import horseView from '../../images/horse_view.png'
 
 export const Product = ({ colorMaterial, colorBinding, colorCord, colorTape, colorTopBinding, textEmbroidery, loadLogoOrText, choosedQuilt, colorLogo, colorText, isShow }) => {
 
-    // let fullColumn = {
-    //     width: isShow ? '100%' : '70%',
-    // }
+    let fullColumn = {
+        width: isShow ? '100%' : '70%',
+    }
 
     // let sizeProduct = {
     //     position: 'absolute',
@@ -28,41 +28,44 @@ export const Product = ({ colorMaterial, colorBinding, colorCord, colorTape, col
 
     return (
 
-        <div className="product" >
+        <div className="product" style={fullColumn} >
+
+            <div className="product__positions">
+                <img src={horseView} className={(isShow ? 'fullView__horse' : 'product__horse')} />
+                <div className="product__items">
+                    <div className={(isShow ? "fullView__layers" : "product__layers")}>
+                        <SvgMaterial className="product__element" style={{ fill: !colorMaterial ? '#000' : colorMaterial }} />
+
+                        {choosedQuilt === 'romb' &&
+                            <SvgQuiltingRomb className="product__element" style={{ fill: 'gray' }} />
+                        }
+                        {choosedQuilt === 'honeycomb' &&
+                            <SvgQuiltinghoneyComb className="product__element" style={{ fill: 'gray' }} />
+                        }
+
+                        <SvgCord className="product__element" style={{ fill: !colorCord ? '#000' : colorCord }} />
 
 
-            <img src={horseView} style={{ position: 'absolute' }} />
-            <div >
-                {/* Material */}
-                <SvgMaterial style={{ position: 'absolute', fill: !colorMaterial ? '#000' : colorMaterial }} />
-
-                {/* Quilts  */}
-                {choosedQuilt === 'romb' &&
-                    <SvgQuiltingRomb style={{ position: 'absolute', fill: !colorTape ? '#000' : colorTape }} />
-                }
-                {choosedQuilt === 'honeycomb' &&
-                    <SvgQuiltinghoneyComb style={{ position: 'absolute', fill: !colorTape ? '#000' : colorTape }} />
-                }
+                        <SvgTopBinding className="product__element" style={{ fill: !colorTopBinding ? '#000' : colorTopBinding }} />
 
 
-                {/* Cord */}
-                <SvgCord style={{ position: 'absolute', fill: !colorCord ? '#000' : colorCord }} />
+                        <SvgBinding className="product__element" style={{ fill: !colorBinding ? '#000' : colorBinding }} />
 
-                {/* Top binding */}
-                <SvgTopBinding style={{ position: 'absolute', fill: !colorTopBinding ? '#000' : colorTopBinding }} />
 
-                {/* Binding */}
-                <SvgBinding style={{ position: 'absolute', fill: !colorBinding ? '#000' : colorBinding }} />
+                        <SvgTape className="product__element" style={{ fill: !colorTape ? '#000' : colorTape }} />
 
-                {/* Tape */}
-                <SvgTape style={{ position: 'absolute', fill: !colorTape ? '#000' : colorTape }} />
-                {/* logo or text*/}
-                {loadLogoOrText === 'logo' ?
-                    <SvgLogo style={{ position: 'absolute', fill: colorLogo }} />
-                    :
-                    <h2 style={{ eft: '0', top: '0', color: colorText }}>{textEmbroidery}</h2>
-                }
+                        {loadLogoOrText === 'logo' ?
+                            <SvgLogo className="product__element" style={{ fill: colorLogo }} />
+                            :
+                            <h2 className={(isShow ? "fullView__text" : "product__text")} style={{ color: colorText }}>{textEmbroidery}</h2>
+                        }
+                    </div>
+
+                </div>
+
             </div>
+
+
         </div>
 
     )

@@ -33,7 +33,7 @@ const SelectionOptions = ({ title, name, color, colorEmbroidery, size, quilting,
 
 
     return (
-        <section className="selectionOptions">
+        <section className="selectionOptions d-flex flex-column align-content-center">
             <SelectionTitle title={title} />
             <div className="selectionOptions__menu">
                 {/* Options of elements saddle pads */}

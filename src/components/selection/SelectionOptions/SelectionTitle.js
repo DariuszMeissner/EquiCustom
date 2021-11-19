@@ -1,9 +1,7 @@
 import React from 'react'
 
-export const SelectionTitle = ({title}) => {
+export const SelectionTitle = ({ title }) => {
     return (
-        <div>
-            <h2>{title}</h2>
-        </div>
+        <h2 className="selection__title">{title}</h2>
     )
 }

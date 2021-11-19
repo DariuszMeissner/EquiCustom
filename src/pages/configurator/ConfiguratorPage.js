@@ -26,7 +26,6 @@ const ConfiguratorPage = ({
     const [isShow, setIsShow] = useState(false)
     const handleClickFullPreview = () => {
         setIsShow(prev => !prev)
-        console.log(isShow)
     }
 
     useEffect(() => {
@@ -37,27 +36,34 @@ const ConfiguratorPage = ({
         <BrowserRouter>
             <section className="configurator">
                 {!isShow && <NavContainer equipment={equipment} />}
-                <ProductPanel
-                    colorMaterial={colorMaterial}
-                    colorBinding={colorBinding}
-                    colorCord={colorCord}
-                    colorTape={colorTape}
-                    colorTopBinding={colorTopBinding}
-                    textEmbroidery={textEmbroidery}
-                    loadLogoOrText={loadLogoOrText}
-                    choosedQuilt={choosedQuilt}
-                    colorText={colorText}
-                    colorLogo={colorLogo}
-                    handleClick={handleClickFullPreview}
-                    isShow={isShow}
-                    equipment={equipment}
-                />
-                <Switch>
-                    <Route
-                        exact path='/configurator/:optionId'
-                        render={({ match }) => !isShow && <SelectionPanel colorBinding={colorBinding} colorMaterial={colorMaterial} match={match} equipment={equipment} />}
-                    />
-                </Switch>
+                <div className="d-flex flex-column-reverse flex-md-column">
+                    <div className="col-12" >
+                        <ProductPanel
+                            colorMaterial={colorMaterial}
+                            colorBinding={colorBinding}
+                            colorCord={colorCord}
+                            colorTape={colorTape}
+                            colorTopBinding={colorTopBinding}
+                            textEmbroidery={textEmbroidery}
+                            loadLogoOrText={loadLogoOrText}
+                            choosedQuilt={choosedQuilt}
+                            colorText={colorText}
+                            colorLogo={colorLogo}
+                            handleClick={handleClickFullPreview}
+                            isShow={isShow}
+                            equipment={equipment}
+                        />
+                    </div>
+                    <div className="col-12" >
+                        <Switch>
+                            <Route
+                                exact path='/configurator/:optionId'
+                                render={({ match }) => !isShow && <SelectionPanel colorBinding={colorBinding} colorMaterial={colorMaterial} match={match} equipment={equipment} />}
+                            />
+                        </Switch>
+                    </div>
+
+                </div>
             </section>
 
         </BrowserRouter>
