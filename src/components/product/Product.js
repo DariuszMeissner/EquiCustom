@@ -19,6 +19,7 @@ export const Product = ({ colorMaterial, colorBinding, colorCord, colorTape, col
         <div className={(isShow ? ' fullView__product' : 'product')} >
 
             <div className={(isShow ? ' fullView__positions' : "product__positions")}>
+                <div className={(isShow ? ' fullView__horse' : 'product__horse focus')}></div>
                 <img src={horseView} className={(isShow ? ' fullView__horse' : 'product__horse')} />
                 <div className={(isShow ? ' fullView__items' : 'product__items')}>
                     <div className={(isShow ? " fullView__layers" : "product__layers")}>

@@ -4,16 +4,16 @@ import { Button } from '../button/button'
 export const OverviewPanel = ({ handleClick, equipment }) => {
 
     return (
-
-        <div className="overviewPanel">
-
-            {equipment.map(({ name }) => <h2 key={name}>{name}</h2>)}
-
-            <div className="d-flex flex-column">
-                <Button handleClick={handleClick} title='Full preview' />
-                <Button handleClick={handleClick} title='Go to order' />
+        <>
+            <div className="productInfo">
+                {equipment.map(({ name }) => <h2 className="productInfo__title" key={name}>{name}</h2>)}
             </div>
-        </div >
+            <div className="d-flex flex-column">
+                <Button btnClass="btn_ btn__second" handleClick={handleClick} title='Full preview' />
+                <Button btnClass="btn_ btn__order" title='Go to order' />
+            </div>
+        </>
+
 
     )
 }

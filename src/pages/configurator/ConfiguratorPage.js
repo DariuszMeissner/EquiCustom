@@ -62,7 +62,6 @@ const ConfiguratorPage = ({
                             />
                         </Switch>
                     </div>
-
                 </div>
             </section>
 
