@@ -12,7 +12,8 @@ export const Nav = ({ equipment }) => {
                         <NavLink
                             className='nav__link'
                             activeClassName="active"
-                            to={`/configurator/${id}`}>
+                            to={`/configurator/${id}`}
+                        >
 
                             <SvgIcon className='nav__circle' />
                             <span className='nav__item'>{name}</span>

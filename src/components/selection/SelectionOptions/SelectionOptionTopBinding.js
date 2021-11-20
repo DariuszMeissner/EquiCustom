@@ -15,10 +15,14 @@ const SelectionOptionTopBinding = ({ color, setColorTopBinding, colorTopBinding 
     }
 
     return (
-        <div className="selectionOptions__item">
-            {color.map(props => <SelectionOptionColor key={props.name} checked={checked} onChange={handleChange} {...props} />)}
-            <ButtonNextStep title='back' id='4' />
-            <ButtonNextStep title='next' id='6' />
+        <div className="selectionOptions__box">
+            <div className="selectionOptions__item">
+                {color.map(props => <SelectionOptionColor key={props.name} checked={checked} onChange={handleChange} {...props} />)}
+            </div>
+            <div className="selectionOptions__navButton">
+                <ButtonNextStep title='back' id='4' />
+                <ButtonNextStep title='next' id='6' />
+            </div>
         </div>
     )
 }

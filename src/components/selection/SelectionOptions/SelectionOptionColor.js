@@ -2,8 +2,8 @@ import React from 'react'
 
 export const SelectionOptionColor = ({ name, value, checked, onChange }) => {
     return (
-        <div className="selectionOptions__" >
-            <label>
+        <div className="selectionColor" >
+            <label className="container">
                 <input
                     type='radio'
                     id={name}
@@ -12,7 +12,8 @@ export const SelectionOptionColor = ({ name, value, checked, onChange }) => {
                     checked={checked === value ? true : false}
                     onChange={onChange}
                 />
-                {name}
+                <span style={{backgroundColor: value}} className="checkmark"></span>
+                <span className="selectionColor__title">{name}</span>
             </label>
         </div>
     )

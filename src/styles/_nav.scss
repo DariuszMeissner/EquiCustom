@@ -1,14 +1,14 @@
+.nav__box {
+  background-color: #fff;
+}
 .nav {
+  width: 100%;
   height: 5vh;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   text-transform: capitalize;
+  justify-content: space-between;
   @include laptop {
     padding: 0 4rem;
-  }
-  &__box {
-    padding: 0.3rem;
   }
   &__item {
     display: none;
@@ -17,6 +17,7 @@
     }
   }
   &__link {
+    width: 100%;
     color: $black-light;
     &:hover {
       color: $red;
@@ -34,14 +35,14 @@
 
 //active link Router NavLink
 .active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: $red;
   font-weight: 600;
   padding: 4px;
   border-radius: 50%;
   background-color: $red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   transition: 0.2s;
   @include tablet {
     border-radius: 0;
@@ -60,4 +61,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include laptop {
+    padding: 0 1rem;
+  }
 }

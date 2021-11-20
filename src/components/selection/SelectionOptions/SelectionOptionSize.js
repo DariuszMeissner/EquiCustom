@@ -15,9 +15,13 @@ const SelectionOptionSize = ({ size, setPadSize, padSize }) => {
     }
 
     return (
-        <div className="selectionOptions__item">
-            {size.map(props => <SelectionOptionColor key={props.name} checked={checked} onChange={handleChange} {...props} />)}
-            <ButtonNextStep title='next' id='2' />
+        <div className="selectionOptions__box">
+            <div className="selectionOptions__item">
+                {size.map(props => <SelectionOptionColor key={props.name} checked={checked} onChange={handleChange} {...props} />)}
+            </div>
+            <div className="selectionOptions__navButton">
+                <ButtonNextStep title='next' id='2' />
+            </div>
         </div>
     )
 }

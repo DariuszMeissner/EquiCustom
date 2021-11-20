@@ -42,8 +42,9 @@ const SelectionOptionEmbroidery = ({ logoOrText, colorEmbroidery, setLogoOrText,
                 {checked === 'logo' && <SelectionOptionEmbroideryLogo colorEmbroidery={colorEmbroidery} />}
                 {checked === 'text' && <SelectionOptionEmbroideryText colorEmbroidery={colorEmbroidery} />}
             </div>
-            <ButtonNextStep title='back' id='7' />
-            <ButtonNextStep title='' id='7' />
+            <div className="selectionOptions__navButton">
+                <ButtonNextStep title='back' id='7' />
+            </div>
         </div>
     )
 }

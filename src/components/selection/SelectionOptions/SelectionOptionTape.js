@@ -15,10 +15,14 @@ const SelectionOptionTape = ({ color, setColorTape, colorTape }) => {
     }
 
     return (
-        <div className="selectionOptions__item">
-            {color.map(props => <SelectionOptionColor key={props.name} checked={checked} onChange={handleChange} {...props} />)}
-            <ButtonNextStep title='back' id='5' />
-            <ButtonNextStep title='next' id='7' />
+        <div className="selectionOptions__box">
+            <div className="selectionOptions__item">
+                {color.map(props => <SelectionOptionColor key={props.name} checked={checked} onChange={handleChange} {...props} />)}
+            </div>
+            <div className="selectionOptions__navButton">
+                <ButtonNextStep title='back' id='5' />
+                <ButtonNextStep title='next' id='7' />
+            </div>
         </div>
     )
 }

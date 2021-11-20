@@ -5,14 +5,119 @@
 }
 
 .selectionPanel {
-  background-color: green;
   @include tablet {
   }
 }
 .selectionOptions {
+  &__box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
   &__item {
     display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 0.785rem;
+  }
+  &__navButton {
+    display: none;
+    @include tablet {
+      display: flex;
+      justify-content: center;
+    }
   }
 }
 
+.selectionColor {
+  padding: 0.475rem;
+  &__title {
+    display: none;
+    @include tablet {
+      display: block;
+      padding-top: 1rem;
+      text-transform: uppercase;
+      color: $dark-gray;
+      font-size: 0.975rem;
+    }
+  }
+}
 // Radio button styling
+/* The container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+  @include tablet {
+    height: 45px;
+    width: 45px;
+  }
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  // background-color: #2196f3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 40px;
+  width: 40px;
+  border: 4px solid $checked;
+  border-radius: 50%;
+  @include tablet {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -69%);
+    height: 62px;
+    width: 62px;
+    border: 4px solid $checked;
+    border-radius: 50%;
+  }
+}
