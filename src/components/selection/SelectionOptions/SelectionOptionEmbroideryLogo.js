@@ -29,11 +29,11 @@ export const SelectionOptionEmbroideryLogo = ({ colorEmbroidery, setColorLogo, c
                             setMark='setMark' />)}
                 </select>
             </div>
-            <div className="selectionOptions__navButton">
-                <ButtonNextStep btnClass="btn navButton" title='back' id='7' />
-            </div>
             <div className="selectionOptions__radio">
                 {colorEmbroidery.map(({ name, value }) => <SelectionOptionColor key={name} name={name} value={value} onChange={handleChange} checked={checked} />)}
+            </div>
+            <div className="selectionOptions__navButton">
+                <ButtonNextStep btnClass="btn navButton" title='back' id='7' />
             </div>
         </div>
     )

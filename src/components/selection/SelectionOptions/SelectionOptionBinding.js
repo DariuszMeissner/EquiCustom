@@ -30,13 +30,11 @@ const SelectionOptionBinding = ({ color, setColorBinding, colorBinding }) => {
                 </select>
             </div>
 
-            <div className="selectionOptions__navButton">
-                <ButtonNextStep btnClass="btn navButton" title='back' id='3' />
-            </div>
             <div className="selectionOptions__radio">
                 {color.map(props => <SelectionOptionColor key={props.name} checked={checked} onChange={handleChange} {...props} />)}
             </div>
             <div className="selectionOptions__navButton">
+                <ButtonNextStep btnClass="btn navButton" title='back' id='3' />
                 <ButtonNextStep btnClass="btn navButton" title='next' id='5' />
             </div>
         </div>

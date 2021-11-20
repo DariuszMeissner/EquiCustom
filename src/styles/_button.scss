@@ -65,14 +65,27 @@
 }
 
 select {
-  padding: .3rem;
-  // max-width: 600px;
+  padding: .4rem;
   width: 40vw;
-  // text-align: center;
+}
+.selectColor__select * {
+  padding: .4rem;
 }
 
 input {
   width: 60vw;
   padding: .3rem;
   margin-bottom: 1rem;
+  text-align: center;
+  @include tablet {
+    width: 50%;
+
+  }
+}
+
+.selectionOptions__input {
+  @include tablet {
+    display: flex;
+    justify-content: center;
+  }
 }

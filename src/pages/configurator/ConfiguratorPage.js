@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actions from '../../redux/actions'
+import { Welcome } from '../../components/overview/Welcome';
 
 const ConfiguratorPage = ({
     startLoadingEquipment,
@@ -56,8 +57,9 @@ const ConfiguratorPage = ({
                     </div>
                     <div className="col-12" >
                         <Switch>
+                            <Route exact path="/" component={Welcome}/>
                             <Route
-                                exact path='/configurator/:optionId'
+                                path='/configurator/:optionId'
                                 render={({ match }) => !isShow && <SelectionPanel colorBinding={colorBinding} colorMaterial={colorMaterial} match={match} equipment={equipment} />}
                             />
                         </Switch>

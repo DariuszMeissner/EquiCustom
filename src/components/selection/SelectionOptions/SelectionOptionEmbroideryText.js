@@ -48,10 +48,10 @@ const SelectionOptionEmbroideryText = ({ colorEmbroidery, setTextEmbroidery, tex
                 </select>
             </div>
             <div className="selectionOptions__box">
-                <div className="selectionOptions__navButton">
-                    <ButtonNextStep btnClass="btn navButton" title='back' id='7' />
-                </div>
                 <div className="selectionColor__radio">
+                    <div className="selectionOptions__navButton">
+                        <ButtonNextStep btnClass="btn navButton" title='back' id='7' />
+                    </div>
                     {colorEmbroidery.map(({ name, value }) => <SelectionOptionColor key={name} name={name} value={value} onChange={handleChange} checked={checked} />)}
                 </div>
             </div>

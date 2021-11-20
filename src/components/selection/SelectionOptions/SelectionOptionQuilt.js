@@ -20,20 +20,18 @@ const SelectionOptionQuilt = ({ quilting, setQuilt, choosedQuilt }) => {
             {/* On mobile */}
             <div className="selectionColor__select selectionOptions__item">
                 <select value={checked} onChange={handleChange}>
-                {quilting.map(props =>
-                    <SelectionOptionSelect
-                        key={props.name}
-                        checked={checked}
-                        onChange={handleChange}
-                        {...props}
-                        showTitle='showTitle'
-                        setMark='setMark' />)}
+                    {quilting.map(props =>
+                        <SelectionOptionSelect
+                            key={props.name}
+                            checked={checked}
+                            onChange={handleChange}
+                            {...props}
+                            showTitle='showTitle'
+                            setMark='setMark' />)}
                 </select>
             </div>
+
             {/* On desktop */}
-            <div className="selectionOptions__navButton">
-                <ButtonNextStep btnClass="btn navButton" title='back' id='1' />
-            </div>
             <div className="selectionOptions__radio">
                 {quilting.map(props =>
                     <SelectionOptionColor
@@ -45,6 +43,7 @@ const SelectionOptionQuilt = ({ quilting, setQuilt, choosedQuilt }) => {
                         setMark='setMark' />)}
             </div>
             <div className="selectionOptions__navButton">
+                <ButtonNextStep btnClass="btn navButton" title='back' id='1' />
                 <ButtonNextStep btnClass="btn navButton" title='next' id='3' />
             </div>
         </div>
