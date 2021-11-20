@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actions from '../../../redux/actions'
 import { ButtonNextStep } from '../../button/ButtonNextStep'
+import { SelectionOptionSelect } from './SelectionOptionSelect'
 
 const SelectionOptionEmbroidery = ({ logoOrText, colorEmbroidery, setLogoOrText, loadLogoOrText }) => {
     const [checked, setChecked] = useState(loadLogoOrText)
@@ -17,11 +18,26 @@ const SelectionOptionEmbroidery = ({ logoOrText, colorEmbroidery, setLogoOrText,
 
     return (
         <div className="selectionOptions__embroidery">
-            <div className="col-12 d-flex">
+            {/* Select on mobile */}
+            <div className="selectionColor__select selectionOptions__item">
+                <select value={checked} onChange={handleChange}>
+                    {logoOrText.map(props =>
+                        <SelectionOptionSelect
+                            key={props.name}
+                            checked={checked}
+                            onChange={handleChange}
+                            {...props}
+                            showTitle='showTitle'
+                            setMark='setMark' />)}
+                </select>
+            </div>
+            {/* Radio on desktop */}
+            
+            <div className="col-12 d-flex justify-content-center">
                 {logoOrText.map(({ name, value }) => {
                     return (
-                        <div className="selectionOptions" key={name}>
-                            <label>
+                        <div className="selectionColor__radio" key={name}>
+                            <label className="container">
                                 <input
                                     type='radio'
                                     id={name}
@@ -30,7 +46,8 @@ const SelectionOptionEmbroidery = ({ logoOrText, colorEmbroidery, setLogoOrText,
                                     checked={checked === value ? true : false}
                                     onChange={handleChange}
                                 />
-                                {name}
+                                <span className="checkmark"></span>
+                                <span className="selectionColor__title showTitle">{name}</span>
                             </label>
 
                         </div>
@@ -41,9 +58,6 @@ const SelectionOptionEmbroidery = ({ logoOrText, colorEmbroidery, setLogoOrText,
             <div className="col-12">
                 {checked === 'logo' && <SelectionOptionEmbroideryLogo colorEmbroidery={colorEmbroidery} />}
                 {checked === 'text' && <SelectionOptionEmbroideryText colorEmbroidery={colorEmbroidery} />}
-            </div>
-            <div className="selectionOptions__navButton">
-                <ButtonNextStep title='back' id='7' />
             </div>
         </div>
     )
