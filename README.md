@@ -7,3 +7,4 @@
 ### Preview
 
 ![configurator - horse equipment](https://user-images.githubusercontent.com/59477908/140179646-bc4c7e20-a735-4ce9-8156-deb8853d4927.png)
+
