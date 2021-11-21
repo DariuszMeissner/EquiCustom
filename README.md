@@ -7,6 +7,14 @@
 ### Demo
 https://dariuszmeissner.github.io/EquiCustom/
 
+##### mobile
+![ecuicustom-mobile](https://user-images.githubusercontent.com/59477908/142771092-9f074f77-5f5e-44c9-8d38-34de0f96164f.jpg)
+##### desktop
+![ecuicustom-desktop](https://user-images.githubusercontent.com/59477908/142771109-7d35c0c3-da19-4911-ae9c-9c7c394bab46.jpg)
+
+
+
+
 
 ### Features
 * Responsive Web Design (RWD)
