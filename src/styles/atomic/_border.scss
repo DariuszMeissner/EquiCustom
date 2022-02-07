@@ -1,0 +1,25 @@
+@use "sass:map";
+@use "./breakpoint_variables";
+@import "../settings/colors";
+
+$stepOfThick: 10;
+
+@for $i from 1 through $stepOfThick {
+  @each $name, $breakpoint in $breakpointName {
+    .b-#{$i}#{$name} {
+      @media (min-width: $breakpoint) {
+        border: $i + px solid;
+      }
+    }
+  }
+}
+
+@for $i from 1 through length($colorsList) {
+  @each $name, $breakpoint in $breakpointName {
+    .b-col-#{$i}#{$name} {
+      @media (min-width: $breakpoint) {
+        border-color: map.get($colors, $i);
+      }
+    }
+  }
+}

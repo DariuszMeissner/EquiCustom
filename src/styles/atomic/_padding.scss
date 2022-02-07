@@ -1,0 +1,55 @@
+@use "./breakpoint_variables";
+
+// Primary value
+$primarySpace: 4px;
+$maxCount: 40;
+
+@for $i from 0 through $maxCount {
+  @each $name, $breakpoint in $breakpointName {
+    .p-#{$i}#{$name} {
+      @media (min-width: $breakpoint) {
+        padding: ($primarySpace * $i)!important;
+      }
+    }
+  }
+}
+
+@for $i from 0 through $maxCount {
+  @each $name, $breakpoint in $breakpointName {
+    .p-l-#{$i}#{$name} {
+      @media (min-width: $breakpoint) {
+        padding-left: ($primarySpace * $i)!important;
+      }
+    }
+  }
+}
+
+@for $i from 0 through $maxCount {
+  @each $name, $breakpoint in $breakpointName {
+    .p-r-#{$i}#{$name} {
+      @media (min-width: $breakpoint) {
+        padding-right: ($primarySpace * $i)!important;
+      }
+    }
+  }
+}
+
+@for $i from 0 through $maxCount {
+  @each $name, $breakpoint in $breakpointName {
+    .p-t-#{$i}#{$name} {
+      @media (min-width: $breakpoint) {
+        padding-top: ($primarySpace * $i)!important;
+      }
+    }
+  }
+}
+
+@for $i from 0 through $maxCount {
+  @each $name, $breakpoint in $breakpointName {
+    .p-b-#{$i}#{$name} {
+      @media (min-width: $breakpoint) {
+        padding-bottom: ($primarySpace * $i)!important;
+      }
+    }
+  }
+}

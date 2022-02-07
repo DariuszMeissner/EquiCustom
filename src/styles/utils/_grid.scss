@@ -1,0 +1,64 @@
+@use "sass:math";
+@import "../atomic/breakpoint_variables";
+
+$columns: 12;
+$column-base-width: math.div(100%, $columns);
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0;
+}
+
+// atomic class if ypu want to remove max-width from grid
+// example: on big screen background fill whole width of screen
+.no-max-width {
+  max-width: none;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 0 0;
+
+  [class*="c-"] {
+    min-height: 1px;
+    padding: 0 1rem;
+    margin: 1rem 0;
+  }
+
+  @for $i from 1 through $columns {
+    .c-s-#{$i} {
+      width: $column-base-width * $i;
+    }
+  }
+  @for $i from 1 through $columns {
+    .c-m-#{$i} {
+      @media (min-width: $breakpoint-m) {
+        width: $column-base-width * $i;
+      }
+    }
+  }
+  @for $i from 1 through $columns {
+    .c-l-#{$i} {
+      @media (min-width: $breakpoint-l) {
+        width: $column-base-width * $i;
+      }
+    }
+  }
+  @for $i from 1 through $columns {
+    .c-ml-#{$i} {
+      @media (min-width: $breakpoint-ml) {
+        width: $column-base-width * $i;
+      }
+    }
+  }
+  @for $i from 1 through $columns {
+    .c-xl-#{$i} {
+      @media (min-width: $breakpoint-xl) {
+        width: $column-base-width * $i;
+      }
+    }
+  }
+}

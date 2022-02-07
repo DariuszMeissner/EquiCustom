@@ -1,0 +1,17 @@
+@use "sass:map";
+
+html,
+body {
+  font-family: $font-base;
+  color: map.get($colors, 1);
+  line-height: 1.8rem;
+}
+
+img {
+  width: 100%;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
