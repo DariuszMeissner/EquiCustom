@@ -18,7 +18,7 @@ $column-base-width: math.div(100%, $columns);
 }
 
 .row {
-  display: flex;
+  display: flex;  
   flex-wrap: wrap;
   margin: 0 0 0 0;
 

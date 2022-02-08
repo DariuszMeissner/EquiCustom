@@ -4,7 +4,7 @@ export const fetchProductData = () => {
     return async (dispatch) => {
         const fetchData = async () => {
             const response = await fetch(
-                'https://in-good-hands-db402-default-rtdb.europe-west1.firebasedatabase.app/Help_category.json'
+                'https://newequicustom-default-rtdb.europe-west1.firebasedatabase.app//products.json'
             );
 
             if (!response.ok) {
@@ -19,7 +19,7 @@ export const fetchProductData = () => {
             const productData = await fetchData();
             dispatch(
                 productActions.replaceData({
-                    product: productData || []
+                    listing: productData || []
                 })
             );
         } catch (error) {
