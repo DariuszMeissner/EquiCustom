@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { ConfiguratorOptions } from './ConfiguratorOptions';
 import './ConfiguratorPage.scss'
 import { ConfiguratorWrapper } from './ConfiguratorWrapper';
 
@@ -11,7 +12,13 @@ export const ConfiguratorPage = () => {
 
     return (
         <section>
-            {thisProduct && <ConfiguratorWrapper thisProduct={thisProduct} />}
+            {thisProduct
+                &&
+                <>
+                    <ConfiguratorWrapper thisProduct={thisProduct} />
+                    <ConfiguratorOptions thisProduct={thisProduct} />
+                </>
+            }
         </section>
     );
 };

@@ -10,6 +10,10 @@ export const ConfiguratorWrapper = ({ thisProduct }) => {
     const thisTopBinding = thisProduct.layersImg.find(layer => layer.name === 'topBinding')
     const thisQuilting = thisProduct.layersImg.find(layer => layer.name === 'quilting').options.find(el => el.name === 'romb')
 
+    const handleMaterial = () => {
+        
+    }
+
     return (
         <div className='pos-relative size'>
             <img className='layer' src={thisMaterial.url} alt="a" />
