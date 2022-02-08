@@ -1,7 +1,7 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { ProductListing } from '../../Listing/ProductListing';
 import './Home.scss';
 
 export const Home = () => {
-    return <div></div>;
+    return <ProductListing />
 };
