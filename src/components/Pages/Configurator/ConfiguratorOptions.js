@@ -1,33 +1,54 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { optionActions } from '../../../store/reducers/options-slice';
 import './ConfiguratorOptions.scss'
+import { InputOption } from './OptionInput/InputOption';
 
-export const ConfiguratorOptions = (props) => {
-    const thisQuilting = props.thisProduct.elements.find(element => element.name === 'quilting');
-    const thisMaterial = props.thisProduct.elements.find(element => element.name === 'material');
-    const thisBinding = props.thisProduct.elements.find(element => element.name === 'binding');
-    const thisTopBinding = props.thisProduct.elements.find(element => element.name === 'top-binding');
-    const thisTape = props.thisProduct.elements.find(element => element.name === 'tape');
-    const thisCord = props.thisProduct.elements.find(element => element.name === 'cord');
-    const thisEmbroidery = props.thisProduct.elements.find(element => element.name === 'embroidery');
+export const ConfiguratorOptions = () => {
+    const dispatch = useDispatch();
+    const { optionId } = useParams();
+    const { productId } = useParams();
+    const products = useSelector(state => state.product.listing)
+    const thisProduct = products.find(product => product.id === +productId)
+    const stateColors = useSelector(state => state.options)
 
-    const [checked, setChecked] = useState('#000')
-    const handleChange = e => {
+    const setOptions = (e, optionId) => {
         const { value } = e.target
-        setChecked(value)
+        switch (optionId) {
+            case "0":
+                return dispatch(optionActions.colorMaterial(value))
+            case "1":
+                return dispatch(optionActions.colorBinding(value));
+            case "2":
+                return dispatch(optionActions.colorTopBinding(value));
+            case "3":
+                return dispatch(optionActions.colorTape(value));
+            case "4":
+                return dispatch(optionActions.colorCord(value));
+            case "5":
+                return dispatch(optionActions.colorEmbroidery(value));
+            default:
+                console.log('Coś poszło nie tak!');
+        }
     }
 
     return (
-        <>
-            {thisMaterial && props.thisProduct.colors.map(color =>
-                <span>
-                    <label>{color.name}</label>
-                    <input type='radio'
-                        value={color.value}
-                        onChange={handleChange}
-                        checked={checked === color.value ? true : false}
-                    />
-                </span>
-            )}
-        </>
+        <div>
+            {thisProduct &&
+                thisProduct.elements.map(el =>
+                    (el.name === 'material' && +el.id === +optionId) &&
+                    el.colors.map(colorOption =>
+                        <InputOption
+                            colorOption={colorOption}
+                            stateColors={stateColors}
+                            optionId={optionId}
+                            setOptions={setOptions}
+                        />
+                    )
+
+                )
+            }
+        </div>
     );
 };
