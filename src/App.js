@@ -20,15 +20,18 @@ const App = () => {
   return (
     <>
       <Router>
+
         <Routes>
           <Route path="/" element={<Nav />}>
             <Route path='/' element={<Home />} />
             <Route path='/products/:productId' element={<ProductPage />} />
           </Route>
-          <Route path='/products/configurator/:productId' element={<ConfiguratorPage />} >
+
+          <Route path='/products/configurator/:productId/options/:optionId' element={<ConfiguratorPage />} >
             <Route path='/products/configurator/:productId/options/:optionId' element={<ConfiguratorOptions />} />
           </Route>
         </Routes>
+
       </Router>
     </>
   )

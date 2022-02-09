@@ -10,3 +10,22 @@
   width: 50%;
   height: auto;
 }
+
+.black {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(7500%) hue-rotate(74deg) brightness(98%) contrast(104%);
+}
+.white {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(108%) hue-rotate(66deg) brightness(114%) contrast(84%);
+}
+.red {
+  filter: brightness(0) saturate(100%) invert(25%) sepia(26%) saturate(4910%) hue-rotate(339deg) brightness(117%) contrast(89%);
+}
+.navy {
+  filter: brightness(0) saturate(100%) invert(22%) sepia(10%) saturate(6495%) hue-rotate(208deg) brightness(96%) contrast(103%);
+}
+.green {
+  filter: brightness(0) saturate(100%) invert(36%) sepia(94%) saturate(336%) hue-rotate(81deg) brightness(94%) contrast(92%);
+}
+.gray {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(1%) saturate(126%) hue-rotate(12deg) brightness(97%) contrast(92%);
+}

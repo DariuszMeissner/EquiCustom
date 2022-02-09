@@ -3,15 +3,16 @@ import './InputOption.scss'
 
 export const InputOption = ({ colorOption, stateColors, optionId, setOptions }) => {
     return (
-        <span key={colorOption.id}>
-            <label>{colorOption.name}</label>
+        <label className='container'>{colorOption.name}
             <input
+                className='block'
                 type="radio"
                 value={colorOption.name}
                 name={optionId}
                 onChange={e => setOptions(e, optionId)}
-                checked={stateColors.material === colorOption.name}
+                checked={stateColors === colorOption.name}
             />
-        </span>
+            <span className='checkmark' style={{ backgroundColor: colorOption.value }}></span>
+        </label>
     );
 };

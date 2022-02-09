@@ -3,12 +3,12 @@ import { createSlice } from "@reduxjs/toolkit";
 const optionSlice = createSlice({
     name: "options",
     initialState: {
-        material: 'black',
+        material: 'red',
         binding: 'black',
         topBinding: 'black',
-        tape: 'black',
-        cord: 'black',
-        embroidery: 'black'
+        tape: 'red',
+        cord: 'white',
+        embroidery: 'white'
 
     },
     reducers: {

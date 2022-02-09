@@ -38,16 +38,98 @@ export const ConfiguratorOptions = () => {
             {thisProduct &&
                 thisProduct.elements.map(el =>
                     (el.name === 'material' && +el.id === +optionId) &&
-                    el.colors.map(colorOption =>
-                        <InputOption
-                            colorOption={colorOption}
-                            stateColors={stateColors}
-                            optionId={optionId}
-                            setOptions={setOptions}
-                        />
-                    )
-
-                )
+                    <>
+                        <h3>{el.title}</h3>
+                        {el.colors.map(colorOption =>
+                            <InputOption
+                                key={colorOption.id}
+                                colorOption={colorOption}
+                                stateColors={stateColors.material}
+                                optionId={optionId}
+                                setOptions={setOptions}
+                            />
+                        )}
+                    </>)
+            }
+            {thisProduct &&
+                thisProduct.elements.map(el =>
+                    (el.name === 'binding' && +el.id === +optionId) &&
+                    <>
+                        <h3>{el.title}</h3>
+                        {el.colors.map(colorOption =>
+                            <InputOption
+                                key={colorOption.id}
+                                colorOption={colorOption}
+                                stateColors={stateColors.binding}
+                                optionId={optionId}
+                                setOptions={setOptions}
+                            />
+                        )}
+                    </>)
+            }
+            {thisProduct &&
+                thisProduct.elements.map(el =>
+                    (el.name === 'top-binding' && +el.id === +optionId) &&
+                    <>
+                        <h3>{el.title}</h3>
+                        {el.colors.map(colorOption =>
+                            <InputOption
+                                key={colorOption.id}
+                                colorOption={colorOption}
+                                stateColors={stateColors.topBinding}
+                                optionId={optionId}
+                                setOptions={setOptions}
+                            />
+                        )}
+                    </>)
+            }
+            {thisProduct &&
+                thisProduct.elements.map(el =>
+                    (el.name === 'tape' && +el.id === +optionId) &&
+                    <>
+                        <h3>{el.title}</h3>
+                        {el.colors.map(colorOption =>
+                            <InputOption
+                                key={colorOption.id}
+                                colorOption={colorOption}
+                                stateColors={stateColors.tape}
+                                optionId={optionId}
+                                setOptions={setOptions}
+                            />
+                        )}
+                    </>)
+            }
+            {thisProduct &&
+                thisProduct.elements.map(el =>
+                    (el.name === 'cord' && +el.id === +optionId) &&
+                    <>
+                        <h3>{el.title}</h3>
+                        {el.colors.map(colorOption =>
+                            <InputOption
+                                key={colorOption.id}
+                                colorOption={colorOption}
+                                stateColors={stateColors.cord}
+                                optionId={optionId}
+                                setOptions={setOptions}
+                            />
+                        )}
+                    </>)
+            }
+            {thisProduct &&
+                thisProduct.elements.map(el =>
+                    (el.name === 'embroidery' && +el.id === +optionId) &&
+                    <>
+                        <h3>{el.title}</h3>
+                        {el.colors.map(colorOption =>
+                            <InputOption
+                                key={colorOption.id}
+                                colorOption={colorOption}
+                                stateColors={stateColors.embroidery}
+                                optionId={optionId}
+                                setOptions={setOptions}
+                            />
+                        )}
+                    </>)
             }
         </div>
     );
