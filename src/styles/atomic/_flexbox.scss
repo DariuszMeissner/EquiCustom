@@ -97,7 +97,7 @@
 }
 
 @each $name, $breakpoint in $breakpointName {
-  .inline#{$name} {
+  .inline-block#{$name} {
     @media (min-width: $breakpoint) {
       display: inline-block;
     }

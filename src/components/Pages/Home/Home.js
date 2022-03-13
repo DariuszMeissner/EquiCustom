@@ -3,5 +3,9 @@ import { ProductListing } from '../../Listing/ProductListing';
 import './Home.scss';
 
 export const Home = () => {
-    return <ProductListing />
+    return (
+        <div className='container'>
+            <ProductListing />
+        </div>
+    )
 };

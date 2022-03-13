@@ -21,19 +21,19 @@ export const ConfiguratorPage = () => {
         thisProduct && dispatch(optionActions.colorTape(thisProduct.look.tape))
         thisProduct && dispatch(optionActions.colorCord(thisProduct.look.cord))
         thisProduct && dispatch(optionActions.colorEmbroidery(thisProduct.look.embroidery))
-    }, [])
+    }, [dispatch, thisProduct])
 
     return (
-        <section>
-            {
-                thisProduct
-                &&
-                <>
-                    <ConfiguratorNav thisProduct={thisProduct} />
-                    <ConfiguratorWrapper thisProduct={thisProduct} stateColors={stateColors} />
-                    <Outlet />
-                </>
-            }
+        <section className='configurator-page'>
+                {
+                    thisProduct
+                    &&
+                    <>
+                        <ConfiguratorNav thisProduct={thisProduct} />
+                        <ConfiguratorWrapper thisProduct={thisProduct} stateColors={stateColors} productId={productId}/>
+                        <Outlet />
+                    </>
+                }
         </section>
     );
 };
