@@ -1,0 +1,22 @@
+@use "sass:map";
+@import "../../../styles/settings/colors";
+
+.configurator-summary {
+  h2 {
+    line-height: 3rem;
+  }
+  .list-properties span:first-child {
+    text-transform: capitalize;
+  }
+  .btn-close-configuration {
+    width: 100%;
+    background-color: map.get($colors, 11);
+    color: map.get($colors, 8);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 32%;
+    font-weight: 600;
+    padding: 1.5rem;
+  }
+}

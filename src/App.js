@@ -6,7 +6,8 @@ import { fetchProductData } from './store/reducers/product-actions'
 import { Home } from './components/Pages/Home/Home'
 import { ProductPage } from './components/ProductPage/ProductPage'
 import { ConfiguratorPage } from './components/Pages/Configurator/ConfiguratorPage'
-
+import { ConfiguratorOptions } from './components/Pages/Configurator/ConfiguratorOptions'
+import { WrapNavFooter } from './components/Layout/WrapNavFooter/WrapNavFooter'
 
 const App = () => {
   const dispatch = useDispatch()
@@ -19,11 +20,18 @@ const App = () => {
   return (
     <>
       <Router>
+
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/products/:productId' element={<ProductPage />} />
-          <Route path='/products/configurator/:productId' element={<ConfiguratorPage />} />
+          <Route path="/" element={<WrapNavFooter />} >
+            <Route path='/' element={<Home />} />
+            <Route path='/products/:productId' element={<ProductPage />} />
+          </Route>
+
+          <Route path='/products/configurator/:productId/options/:optionId' element={<ConfiguratorPage />} >
+            <Route path='/products/configurator/:productId/options/:optionId' element={<ConfiguratorOptions />} />
+          </Route>
         </Routes>
+
       </Router>
     </>
   )
