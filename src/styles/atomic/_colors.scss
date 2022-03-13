@@ -1,0 +1,23 @@
+@use "./breakpoint_variables";
+
+// text color
+@each $key, $value in $colors {
+  @each $breakName, $breakpoint in $breakpointName {
+    .col-#{$key}#{$breakName} {
+      @media (min-width: $breakpoint) {
+        color: $value;
+      }
+    }
+  }
+}
+
+// background color
+@each $key, $value in $colors {
+  @each $breakName, $breakpoint in $breakpointName {
+    .bg-col-#{$key}#{$breakName} {
+      @media (min-width: $breakpoint) {
+        background-color: $value;
+      }
+    }
+  }
+}

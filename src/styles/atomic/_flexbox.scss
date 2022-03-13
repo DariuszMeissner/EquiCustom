@@ -1,0 +1,105 @@
+@use "./breakpoint_variables";
+
+// loop display flex
+@each $name, $breakpoint in $breakpointName {
+  .flex#{$name} {
+    @media (min-width: $breakpoint) {
+      display: flex;
+    }
+  }
+}
+
+// loop justify-content: center
+@each $name, $breakpoint in $breakpointName {
+  .flex-justify-center#{$name} {
+    @media (min-width: $breakpoint) {
+      justify-content: center;
+    }
+  }
+}
+// loop justify-content: flex-start
+@each $name, $breakpoint in $breakpointName {
+  .flex-justify-start#{$name} {
+    @media (min-width: $breakpoint) {
+      justify-content: flex-start;
+    }
+  }
+}
+
+@each $name, $breakpoint in $breakpointName {
+  .flex-justify-end#{$name} {
+    @media (min-width: $breakpoint) {
+      justify-content: flex-end;
+    }
+  }
+}
+
+@each $name, $breakpoint in $breakpointName {
+  .flex-justify-between#{$name} {
+    @media (min-width: $breakpoint) {
+      justify-content: space-between;
+    }
+  }
+}
+
+@each $name, $breakpoint in $breakpointName {
+  .flex-justify-around#{$name} {
+    @media (min-width: $breakpoint) {
+      justify-content: space-around;
+    }
+  }
+}
+
+@each $name, $breakpoint in $breakpointName {
+  .flex-align-center#{$name} {
+    @media (min-width: $breakpoint) {
+      align-items: center;
+    }
+  }
+}
+@each $name, $breakpoint in $breakpointName {
+  .flex-align-start#{$name} {
+    @media (min-width: $breakpoint) {
+      align-items: flex-start;
+    }
+  }
+}
+@each $name, $breakpoint in $breakpointName {
+  .flex-align-end#{$name} {
+    @media (min-width: $breakpoint) {
+      align-items: flex-end;
+    }
+  }
+}
+
+@each $name, $breakpoint in $breakpointName {
+  .flex-column#{$name} {
+    @media (min-width: $breakpoint) {
+      flex-direction: column;
+    }
+  }
+}
+
+@each $name, $breakpoint in $breakpointName {
+  .flex-row#{$name} {
+    @media (min-width: $breakpoint) {
+      flex-direction: row;
+    }
+  }
+}
+
+@each $name, $breakpoint in $breakpointName {
+  .block#{$name} {
+    @media (min-width: $breakpoint) {
+      display: block;
+    }
+  }
+}
+
+@each $name, $breakpoint in $breakpointName {
+  .inline-block#{$name} {
+    @media (min-width: $breakpoint) {
+      display: inline-block;
+    }
+  }
+}

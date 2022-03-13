@@ -1,0 +1,12 @@
+@use "sass:math";
+
+// function converting px to rem
+// usage
+//
+//      @import '../atomic/px_to_rem';
+//      width: px-to-rem(95px) // width:5.9375rem
+
+@function px-to-rem($value) {
+  $remValue: math.div($value, 16px) * 1rem;
+  @return $remValue;
+}

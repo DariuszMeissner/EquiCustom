@@ -1,0 +1,36 @@
+@use "sass:map";
+@import "../atomic/px_to_rem";
+
+[class^="icon"] {
+  width: px-to-rem(22px);
+  height: px-to-rem(22px);
+  fill: map.get($colors, 1);
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: px-to-rem(8px);
+}
+
+.icon-bars {
+  background-image: url("../../assets/icons/bars.svg");
+}
+
+.icon-close {
+  background-image: url("../../assets/icons/close.svg");
+}
+
+.icon-sign-in {
+  background-image: url("../../assets/icons/sign-in.svg");
+}
+
+.icon-register {
+  background-image: url("../../assets/icons/register.svg");
+}
+
+.icon-arrow-right {
+  background-image: url("../../assets/icons/arrow-right.svg");
+}
+
+.icon-arrow-left {
+  background-image: url("../../assets/icons/arrow-left.svg");
+}
