@@ -1,0 +1,26 @@
+// Hamburger menu transition
+.navMobileView {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 800ms;
+  transform: translateX(-200%);
+}
+
+.hide-up {
+  transform: translateX(-200%);
+}
+.show-up {
+  transform: translateX(0);
+}
+
+// Width of menu
+.mobile-width {
+  width: 100vw;
+  height: 100vh;
+}
+
+.tablet-width {
+  width: 60vw;
+  height: 100vh;
+}

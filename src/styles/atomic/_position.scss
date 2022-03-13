@@ -1,0 +1,65 @@
+@use "./breakpoint_variables";
+
+$primarySpacing: 5%;
+$stepSpacing: 20;
+
+// loop position
+@each $name, $breakpoint in $breakpointName {
+  .pos-absolute#{$name} {
+    @media (min-width: $breakpoint) {
+      position: absolute;
+      z-index: -1;
+    }
+  }
+}
+
+@each $name, $breakpoint in $breakpointName {
+  .pos-relative#{$name} {
+    @media (min-width: $breakpoint) {
+      position: relative;
+      z-index: -1;
+    }
+  }
+}
+
+@for $i from 1 through $stepSpacing {
+  @each $name, $breakpoint in $breakpointName {
+    .pos-left-#{$i}#{$name} {
+      @media (min-width: $breakpoint) {
+        left: $primarySpacing * $i;
+      }
+    }
+  }
+}
+
+@for $i from 1 through $stepSpacing {
+  @each $name, $breakpoint in $breakpointName {
+    .pos-right-#{$i}#{$name} {
+      @media (min-width: $breakpoint) {
+        right: $primarySpacing * $i;
+      }
+    }
+  }
+}
+
+@for $i from 1 through $stepSpacing {
+  @each $name, $breakpoint in $breakpointName {
+    .pos-top-#{$i}#{$name} {
+      @media (min-width: $breakpoint) {
+        top: $primarySpacing * $i;
+      }
+    }
+  }
+}
+
+@for $i from 1 through $stepSpacing {
+  @each $name, $breakpoint in $breakpointName {
+    .pos-bot-#{$i}#{$name} {
+      @media (min-width: $breakpoint) {
+        bottom: $primarySpacing * $i;
+      }
+    }
+  }
+}
+
+

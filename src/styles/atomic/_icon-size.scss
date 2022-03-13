@@ -1,0 +1,17 @@
+@use "./breakpoint_variables";
+
+// Primary value
+$primaryStep: 0.25rem; // 4px
+$maxCount: 30;
+
+// font size
+@for $i from 1 through $maxCount {
+  @each $name, $breakpoint in $breakpointName {
+    .is-#{$i}#{$name} {
+      @media (min-width: $breakpoint) {
+        width: ($primaryStep * $i) !important;
+        height: ($primaryStep * $i) !important;
+      }
+    }
+  }
+}
