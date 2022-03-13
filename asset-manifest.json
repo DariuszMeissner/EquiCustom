@@ -1,36 +1,22 @@
 {
   "files": {
-    "main.css": "/EquiCustom/static/css/main.3ee1b84d.chunk.css",
-    "main.js": "/EquiCustom/static/js/main.b4e6370c.chunk.js",
-    "main.js.map": "/EquiCustom/static/js/main.b4e6370c.chunk.js.map",
+    "main.css": "/EquiCustom/static/css/main.fca52a56.chunk.css",
+    "main.js": "/EquiCustom/static/js/main.23e44128.chunk.js",
+    "main.js.map": "/EquiCustom/static/js/main.23e44128.chunk.js.map",
     "runtime-main.js": "/EquiCustom/static/js/runtime-main.7c1f5188.js",
     "runtime-main.js.map": "/EquiCustom/static/js/runtime-main.7c1f5188.js.map",
-    "static/css/2.0a9ec390.chunk.css": "/EquiCustom/static/css/2.0a9ec390.chunk.css",
-    "static/js/2.04635581.chunk.js": "/EquiCustom/static/js/2.04635581.chunk.js",
-    "static/js/2.04635581.chunk.js.map": "/EquiCustom/static/js/2.04635581.chunk.js.map",
+    "static/js/2.a010e822.chunk.js": "/EquiCustom/static/js/2.a010e822.chunk.js",
+    "static/js/2.a010e822.chunk.js.map": "/EquiCustom/static/js/2.a010e822.chunk.js.map",
     "index.html": "/EquiCustom/index.html",
-    "static/css/2.0a9ec390.chunk.css.map": "/EquiCustom/static/css/2.0a9ec390.chunk.css.map",
-    "static/css/main.3ee1b84d.chunk.css.map": "/EquiCustom/static/css/main.3ee1b84d.chunk.css.map",
-    "static/js/2.04635581.chunk.js.LICENSE.txt": "/EquiCustom/static/js/2.04635581.chunk.js.LICENSE.txt",
-    "static/media/arrow-left-solid.b27e2493.svg": "/EquiCustom/static/media/arrow-left-solid.b27e2493.svg",
-    "static/media/arrow-right-solid.2db90993.svg": "/EquiCustom/static/media/arrow-right-solid.2db90993.svg",
-    "static/media/binding_pad.8257630c.svg": "/EquiCustom/static/media/binding_pad.8257630c.svg",
-    "static/media/circle-solid.7e052027.svg": "/EquiCustom/static/media/circle-solid.7e052027.svg",
-    "static/media/cord_pad.448b2125.svg": "/EquiCustom/static/media/cord_pad.448b2125.svg",
-    "static/media/horse_view.83965263.png": "/EquiCustom/static/media/horse_view.83965263.png",
-    "static/media/logo_pad.55f4ecd0.svg": "/EquiCustom/static/media/logo_pad.55f4ecd0.svg",
-    "static/media/material_pad.840716c6.svg": "/EquiCustom/static/media/material_pad.840716c6.svg",
-    "static/media/_main.scss": "/EquiCustom/static/media/pacifico-v17-latin-regular.efe70375.svg",
-    "static/media/quilting_honeyComb_pad.208e7718.svg": "/EquiCustom/static/media/quilting_honeyComb_pad.208e7718.svg",
-    "static/media/quilting_romb_pad.e6443f4b.svg": "/EquiCustom/static/media/quilting_romb_pad.e6443f4b.svg",
-    "static/media/tape_pad.8af7339e.svg": "/EquiCustom/static/media/tape_pad.8af7339e.svg",
-    "static/media/topBinding_pad.ba3f5deb.svg": "/EquiCustom/static/media/topBinding_pad.ba3f5deb.svg"
+    "static/css/main.fca52a56.chunk.css.map": "/EquiCustom/static/css/main.fca52a56.chunk.css.map",
+    "static/js/2.a010e822.chunk.js.LICENSE.txt": "/EquiCustom/static/js/2.a010e822.chunk.js.LICENSE.txt",
+    "static/media/_main.scss": "/EquiCustom/static/media/sign-in.a0ee99a3.svg",
+    "static/media/logo.2669a26a.svg": "/EquiCustom/static/media/logo.2669a26a.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.7c1f5188.js",
-    "static/css/2.0a9ec390.chunk.css",
-    "static/js/2.04635581.chunk.js",
-    "static/css/main.3ee1b84d.chunk.css",
-    "static/js/main.b4e6370c.chunk.js"
+    "static/js/2.a010e822.chunk.js",
+    "static/css/main.fca52a56.chunk.css",
+    "static/js/main.23e44128.chunk.js"
   ]
 }
