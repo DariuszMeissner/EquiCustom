@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/EquiCustom/static/css/main.fca52a56.chunk.css",
-    "main.js": "/EquiCustom/static/js/main.23e44128.chunk.js",
-    "main.js.map": "/EquiCustom/static/js/main.23e44128.chunk.js.map",
+    "main.js": "/EquiCustom/static/js/main.087d9a5b.chunk.js",
+    "main.js.map": "/EquiCustom/static/js/main.087d9a5b.chunk.js.map",
     "runtime-main.js": "/EquiCustom/static/js/runtime-main.7c1f5188.js",
     "runtime-main.js.map": "/EquiCustom/static/js/runtime-main.7c1f5188.js.map",
     "static/js/2.a010e822.chunk.js": "/EquiCustom/static/js/2.a010e822.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.7c1f5188.js",
     "static/js/2.a010e822.chunk.js",
     "static/css/main.fca52a56.chunk.css",
-    "static/js/main.23e44128.chunk.js"
+    "static/js/main.087d9a5b.chunk.js"
   ]
 }
