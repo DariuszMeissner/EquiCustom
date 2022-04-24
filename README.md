@@ -1,15 +1,18 @@
 # EquiCustom
 
-### Concept
+### Description
+Horse equipment configurator which contains extra listing page of product and page of product.
 
-`Horse gear configurator focusing on saddle pad. Enable visual changes of colour and adding extras to the product. Solves the problem of the participation of a store employee when placing a personalized order, which is very time-consuming. `
+### Feature
+- contact form with validation and data saving in daatabase
+- responsive website desktop and mobile
 
 ### Demo
 https://dariuszmeissner.github.io/EquiCustom/
     
 ### Technologies
 * React.js with Hooks
-* Redux
+* Redux toolkit
 * React Router
 * Rest Api - firebase
 * Sass
