@@ -1,13 +1,14 @@
 # EquiCustom
 
 ### Description
-Horse equipment configurator which contains extra:
+Horse equipment configurator which contains:
 - listing page 
-- and product page.
+- product page
+- Horse equipment configurator
 
-### Feature
+### Features
 - every product is unique
-- every product is configurable
+- every product is configurable from Rest Api
 - 99% of data there is generate from Rest api
 
 ### Demo
